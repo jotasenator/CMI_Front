@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from '../components/hooks/useForm'
 import Axios from 'axios'
+import { AuthContext } from '../auth/AuthContext'
+import { types } from '../types/types'
 
 
-export const LoginScreen = () => {
+export const LoginScreen = ({ history }) => {
+
+
+
     const [loginValues, handleInputchange] = useForm({
         usuarioAdmin: '',
         password: '',
@@ -11,6 +16,9 @@ export const LoginScreen = () => {
     })
 
     const { usuarioAdmin, password } = loginValues
+
+    const { dispatch } = useContext(AuthContext)
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -25,13 +33,29 @@ export const LoginScreen = () => {
                     const verificar = cuentasBD.find(
                         elemento => elemento.usuario === usuarioAdmin
                             &&
-                            elemento.password === password)
+                            elemento.password === password
+                    )
+
 
                     if (verificar !== undefined) {
+
+
                         alert('Este es un usuario verificado')
+
+                        dispatch({
+                            type: types.login,
+                            payload: {
+                                name: usuarioAdmin
+                            }
+                        })
+
+
                     }
+                    history.replace('/form')
                     if (!(verificar !== undefined)) {
+
                         alert('Este no es un usuario verificado')
+
                     }
 
 
@@ -52,6 +76,10 @@ export const LoginScreen = () => {
 
     return (
         <>
+            <div className='container mt-5' style={{ textAlign: 'center' }}>
+
+                <h1>Bienvenido a CMI Estadio Capitán San Luis</h1>
+            </div>
 
             <div
                 style={{
@@ -76,7 +104,7 @@ export const LoginScreen = () => {
                             Solo usuarios con privilegios de administración.</div>
                     </div>
                     <div className="mb-3 ">
-                        <label className="form-label">Password</label>
+                        <label className="form-label">Contraseña</label>
                         <input type="password"
                             className="form-control"
                             name='password'

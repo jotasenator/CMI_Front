@@ -4,8 +4,8 @@ import { TableScreen } from '../components/TableScreen'
 
 export const EconomiaScreen = () => {
     return (
-        <div>
-            economia
+        <div className='container mt-5'>
+            Economia
             <TableScreen />
         </div>
     )

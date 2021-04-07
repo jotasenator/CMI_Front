@@ -1,17 +1,34 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min'
 
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useHistory } from 'react-router-dom'
+import { AuthContext } from '../auth/AuthContext'
+import { types } from '../types/types'
 
 
 
 export const Navbar = () => {
+
+    const { user, dispatch } = useContext(AuthContext)
+    const history = useHistory()
+
+    const handleLogout = () => {
+        history.replace('/login')
+
+        dispatch({
+            type: types.logout
+        })
+
+    }
+
+
     return (
         <nav
 
             className="navbar navbar-expand-sm navbar-dark "
             style={{ backgroundColor: '#0062cc' }}>
+
 
             <Link
                 style={{ cursor: 'default', border: 'solid white 1px', borderRadius: '10px', padding: '10px' }}
@@ -50,11 +67,11 @@ export const Navbar = () => {
                                 <NavLink
 
                                     className=" nav-link dropdown-toggle "
-                                    to=''
+                                    to='/economia'
                                     id="navbarDropdownMenuLink"
                                     data-toggle="dropdown"
                                     aria-expanded="false">
-                                    Departamentos
+                                    Reportes
                             </NavLink>
                                 <div className="dropdown-menu"
                                     aria-labelledby="navbarDropdownMenuLink">
@@ -75,14 +92,17 @@ export const Navbar = () => {
             </div>
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">
-                    <NavLink
-                        activeClassName="active"
-                        className="nav-item nav-link"
-                        exact
-                        to="/login"
+                    <span className='nav-item nav-link text-info'>
+                        {user.name}
+                    </span>
+                    <button
+
+                        className="nav-item nav-link btn"
+                        onClick={handleLogout}
+
                     >
                         Logout
-                    </NavLink>
+                    </button>
                 </ul>
             </div>
 

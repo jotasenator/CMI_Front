@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import { AppRouter } from './routers/AppRouter';
-
-
-
+import { CMI } from './CMI';
 
 
 
@@ -12,7 +8,7 @@ import { AppRouter } from './routers/AppRouter';
 
 ReactDOM.render(
 
-  <AppRouter />,
+  <CMI />,
 
 
   document.getElementById('root')

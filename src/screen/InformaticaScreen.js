@@ -3,7 +3,7 @@ import { TableScreen } from '../components/TableScreen'
 
 export const InformaticaScreen = () => {
     return (
-        <div>
+        <div className='container mt-5'>
             Informatica
             <TableScreen />
         </div>

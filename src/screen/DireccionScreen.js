@@ -4,7 +4,7 @@ import { TableScreen } from '../components/TableScreen'
 
 export const DireccionScreen = () => {
     return (
-        <div>
+        <div className='container mt-5'>
 
             Direccion
             <TableScreen />

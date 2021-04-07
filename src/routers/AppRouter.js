@@ -1,40 +1,45 @@
-import React from 'react'
-
-import { EconomiaScreen } from '../screen/EconomiaScreen'
-import { InformaticaScreen } from '../screen/InformaticaScreen'
-import { DireccionScreen } from '../screen/DireccionScreen'
-import { RecursosHumanosScreen } from '../screen/RecursosHumanosScreen'
-import { ComisionCuadrosScreen } from '../screen/ComisionCuadrosScreen'
-import { CVPScreen } from '../screen/CVPScreen'
-
+import React, { useContext } from 'react'
 import { LoginScreen } from '../screen/LoginScreen'
 
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
+
 
 } from "react-router-dom";
-import { Navbar } from '../ui/Navbar';
-import { Form } from '../components/Form'
+
+import { DashboardRoutes } from './DashboardRoutes'
+import { PrivateRoute } from './PrivateRoute';
+import { AuthContext } from '../auth/AuthContext';
+import { PublicRoute } from './PublicRoute';
+
 
 
 
 export const AppRouter = () => {
-    return (
-        <div>
-            <Router>
-                <Navbar />
-                <Switch>
-                    <Route exact path='/login' component={LoginScreen} />
 
-                    <Route exact path='/' component={Form} />
-                    <Route exact path='/informatica' component={InformaticaScreen} />
-                    <Route exact path='/economia' component={EconomiaScreen} />
-                    <Route exact path='/direccion' component={DireccionScreen} />
-                    <Route exact path='/cvp' component={CVPScreen} />
-                    <Route exact path='/comision' component={ComisionCuadrosScreen} />
-                    <Route exact path='/rrhh' component={RecursosHumanosScreen} />
+    const { user } = useContext(AuthContext)
+
+    return (
+        <div >
+
+            <Router>
+
+                <Switch>
+                    <PublicRoute
+                        exact path='/login'
+                        component={LoginScreen}
+                        isAuthenticated={user.logged}
+
+                    />
+
+                    <PrivateRoute
+                        path='/'
+                        component={DashboardRoutes}
+                        isAuthenticated={user.logged}
+
+                    />
+
 
                 </Switch>
             </Router>

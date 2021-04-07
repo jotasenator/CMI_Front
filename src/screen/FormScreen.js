@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useForm } from './hooks/useForm'
+import { useForm } from '../components/hooks/useForm'
 
 import './login.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -11,7 +11,7 @@ import Axios from 'axios'
 
 
 
-export const Form = () => {
+export const FormScreen = () => {
 
     const [formValues, handleInputchange] = useForm({
         departamento: '',
