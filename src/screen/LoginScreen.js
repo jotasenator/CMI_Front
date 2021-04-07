@@ -4,6 +4,8 @@ import Axios from 'axios'
 import { AuthContext } from '../auth/AuthContext'
 import { types } from '../types/types'
 import bcrypt from '../../node_modules/bcryptjs'
+import Swal from 'sweetalert2'
+
 
 
 export const LoginScreen = ({ history }) => {
@@ -46,22 +48,40 @@ export const LoginScreen = ({ history }) => {
 
                     if (verificar !== undefined) {
 
+                        Swal.fire(
+                            'Correcto   ',
+                            'Usuario verificado con éxito',
+                            'success'
+                        )
 
-                        alert('Este es un usuario verificado')
+                        setTimeout(() => {
+                            dispatch({
+                                type: types.login,
+                                payload: {
+                                    name: usuarioAdmin
+                                }
+                            })
+                        }
+                            , 1000)
 
-                        dispatch({
-                            type: types.login,
-                            payload: {
-                                name: usuarioAdmin
-                            }
-                        })
+
+
 
 
                     }
+
                     history.replace('/form')
+
+
+
+
                     if (!(verificar !== undefined)) {
 
-                        alert('Este no es un usuario verificado')
+                        Swal.fire(
+                            'Error',
+                            'Usuario NO existe',
+                            'error'
+                        )
 
                     }
 
@@ -73,7 +93,11 @@ export const LoginScreen = ({ history }) => {
 
         }
         if (!(usuarioAdmin !== '' && password !== '')) {
-            alert('Por favor rellene los campos correctamente')
+            Swal.fire(
+                'Error   ',
+                'Entrada de datos incorrecta',
+                'error'
+            )
         }
 
 

@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
+    "animate.css": "^4.1.1",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.6.0",
@@ -24,6 +25,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-select-country-list": "^2.2.3",
+    "sweetalert2": "^10.15.7",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
