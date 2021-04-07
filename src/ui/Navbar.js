@@ -67,12 +67,12 @@ export const Navbar = () => {
                                 <NavLink
 
                                     className=" nav-link dropdown-toggle "
-                                    to='/economia'
+                                    to='/informatica'
                                     id="navbarDropdownMenuLink"
                                     data-toggle="dropdown"
                                     aria-expanded="false">
-                                    Reportes
-                            </NavLink>
+                                    Departamentos
+                                </NavLink>
                                 <div className="dropdown-menu"
                                     aria-labelledby="navbarDropdownMenuLink">
                                     <NavLink className="dropdown-item" to='/economia'>Economia</NavLink>
@@ -92,7 +92,11 @@ export const Navbar = () => {
             </div>
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">
-                    <span className='nav-item nav-link text-info'>
+                    <span
+                        className='nav-item nav-link btn'
+                        style={{ cursor: 'default' }}
+
+                    >
                         {user.name}
                     </span>
                     <button

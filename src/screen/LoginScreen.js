@@ -3,6 +3,7 @@ import { useForm } from '../components/hooks/useForm'
 import Axios from 'axios'
 import { AuthContext } from '../auth/AuthContext'
 import { types } from '../types/types'
+import bcrypt from '../../node_modules/bcryptjs'
 
 
 export const LoginScreen = ({ history }) => {
@@ -20,9 +21,12 @@ export const LoginScreen = ({ history }) => {
     const { dispatch } = useContext(AuthContext)
 
 
+
+
     const handleSubmit = (e) => {
         e.preventDefault()
-
+        // obtener usuario y password que acaba de entrar el usuario y 
+        // encontrar un match, comparando password encriptados
         if (usuarioAdmin !== '' && password !== '') {
 
             Axios.get('http://localhost:4000/user/')
@@ -30,10 +34,13 @@ export const LoginScreen = ({ history }) => {
 
                     const cuentasBD = res.data.admin
 
+
+
                     const verificar = cuentasBD.find(
                         elemento => elemento.usuario === usuarioAdmin
                             &&
-                            elemento.password === password
+                            bcrypt.compareSync(password, elemento.password)
+
                     )
 
 
@@ -57,8 +64,6 @@ export const LoginScreen = ({ history }) => {
                         alert('Este no es un usuario verificado')
 
                     }
-
-
 
                 })
                 .catch((err) => {
