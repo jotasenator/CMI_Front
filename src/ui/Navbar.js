@@ -60,19 +60,24 @@ export const Navbar = () => {
                         aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div className="collapse navbar-collapse"
+
+                        id="navbarNavDropdown">
                         <ul className="navbar-nav">
 
-                            <li className="nav-item dropdown">
-                                <NavLink
+                            <li className="nav-item dropdown btn ">
+                                <button
 
-                                    className=" nav-link dropdown-toggle "
-                                    to='/informatica'
+                                    className=" nav-link dropdown-toggle btn  "
+                                    style={{
+                                        padding: '0',
+
+                                    }}
                                     id="navbarDropdownMenuLink"
                                     data-toggle="dropdown"
                                     aria-expanded="false">
                                     Departamentos
-                                </NavLink>
+                                </button>
                                 <div className="dropdown-menu"
                                     aria-labelledby="navbarDropdownMenuLink">
                                     <NavLink className="dropdown-item" to='/economia'>Economia</NavLink>

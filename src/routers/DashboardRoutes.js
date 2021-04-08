@@ -1,12 +1,12 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router'
-import { ComisionCuadrosScreen } from '../screen/ComisionCuadrosScreen'
-import { CVPScreen } from '../screen/CVPScreen'
-import { DireccionScreen } from '../screen/DireccionScreen'
-import { EconomiaScreen } from '../screen/EconomiaScreen'
+import { ComisionCuadrosScreen } from '../../src/screen/departamentos/ComisionCuadrosScreen'
+import { CVPScreen } from '../../src/screen/departamentos/CVPScreen'
+import { DireccionScreen } from '../../src/screen/departamentos/DireccionScreen'
+import { EconomiaScreen } from '../../src/screen/departamentos/EconomiaScreen'
 import { FormScreen } from '../screen/FormScreen'
-import { InformaticaScreen } from '../screen/InformaticaScreen'
-import { RecursosHumanosScreen } from '../screen/RecursosHumanosScreen'
+import { InformaticaScreen } from '../../src/screen/departamentos/InformaticaScreen'
+import { RecursosHumanosScreen } from '../../src/screen/departamentos/RecursosHumanosScreen'
 import { Navbar } from '../ui/Navbar'
 
 

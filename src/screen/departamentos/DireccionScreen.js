@@ -1,11 +1,14 @@
 import React from 'react'
-import { TableScreen } from '../components/TableScreen'
+import { TableScreen } from '../../components/TableScreen'
 
-export const InformaticaScreen = () => {
+
+export const DireccionScreen = () => {
     return (
         <div className='container mt-5'>
-            Informatica
+
+            Direccion
             <TableScreen />
+
         </div>
     )
 }
