@@ -207,25 +207,44 @@ export const FormScreen = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        Axios.post('http://localhost:4000/api/', formValues)
-            .then(() => {
-                Swal.fire(
-                    'Correcto   ',
-                    'Se ha añadido correctamente la información a la base de datos',
-                    'success'
+        Axios.get('http://localhost:4000/api/')
+            .then(({ data }) => {
+
+                data.eventos.find(x =>
+                    x.computadoraNI === computadoraNI
+                    &&
+                    x.noSello === noSello
+                    &&
+                    x.responsable === responsable
+                    &&
+                    x.identificadorEquipo === identificadorEquipo
                 )
+                    ?
+                    Swal.fire(
+                        'Error   ',
+                        'Esta información ya está almacenada',
+                        'error'
+                    )
+                    :
+                    Axios.post('http://localhost:4000/api/', formValues)
+                        .then(() => {
+                            Swal.fire(
+                                'Correcto   ',
+                                'Se ha añadido correctamente la información a la base de datos',
+                                'success'
+                            )
+
+                        })
+                        .catch(() => {
+                            Swal.fire(
+                                'Error   ',
+                                'No se ha añadido la información a la base de datos',
+                                'error'
+                            )
+
+                        })
 
             })
-            .catch(() => {
-                Swal.fire(
-                    'Error   ',
-                    'No se ha añadido la información a la base de datos',
-                    'error'
-                )
-
-            })
-
-
 
     }
 
@@ -251,22 +270,23 @@ export const FormScreen = () => {
                         </select>
                     </div>
                     {/*renderizado opcional para tener un cambio de color en los inputs */}
-                    {variables.map((x, index) =>
+                    {variables.map((variable, index) =>
                         <div className="form-group">
 
                             {
                                 // eslint-disable-next-line no-eval
-                                (eval(x) === '') ?
+                                (eval(variable) === '') ?
                                     (<input
 
                                         className='form-control alert alert-danger'
                                         key={index}
                                         type="text"
-                                        name={x}
-                                        placeholder={x}
+                                        name={variable}
+                                        placeholder={variable}
                                         onChange={handleInputchange}
+                                        title={variable}
                                         // eslint-disable-next-line no-eval
-                                        value={eval(x)}
+                                        value={eval(variable)}
 
                                     />) :
                                     (
@@ -275,11 +295,12 @@ export const FormScreen = () => {
                                             className='form-control alert alert-success '
                                             key={index}
                                             type="text"
-                                            name={x}
-                                            placeholder={x}
+                                            name={variable}
+                                            placeholder={variable}
                                             onChange={handleInputchange}
                                             // eslint-disable-next-line no-eval
-                                            value={eval(x)}
+                                            value={eval(variable)}
+                                            title={variable}
 
                                         />
 
