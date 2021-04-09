@@ -6,6 +6,8 @@ import { Link, NavLink, useHistory } from 'react-router-dom'
 import { AuthContext } from '../auth/AuthContext'
 import { types } from '../types/types'
 
+import '../css.css'
+
 
 
 export const Navbar = () => {
@@ -24,29 +26,17 @@ export const Navbar = () => {
 
 
     return (
-        <nav
-
-            className="navbar navbar-expand-sm navbar-dark "
-            style={{ backgroundColor: 'rgba(45, 167, 142, 0.52)' }}>
-
+        <nav className=" nav1 navbar navbar-expand-sm navbar-dark ">
 
             <Link
-                style={{
-                    cursor: 'default',
-                    border: 'solid white 1px',
-                    borderRadius: '10px',
-                    padding: '10px',
-
-
-                }}
-                className="navbar-brand"
+                className=" navLogo navbar-brand"
                 to="/"
                 title='Control de Medios Informáticos'
             >
                 CMI Estadio Capitán San Luis
             </Link>
 
-            <div className="navbar-collapse">
+            <div className="navbar-collapse" >
                 <div className="navbar-nav" >
 
                     <NavLink
@@ -61,6 +51,7 @@ export const Navbar = () => {
 
                     <button className="navbar-toggler"
 
+
                         type="button"
                         data-toggle="collapse"
                         data-target="1navbarNavDropdown"
@@ -74,19 +65,15 @@ export const Navbar = () => {
                         id="navbarNavDropdown">
                         <ul className="navbar-nav">
 
-                            <li className="nav-item dropdown btn ">
+                            <li className="nav-item dropdown  ">
                                 <button
-
-                                    className=" nav-link dropdown-toggle btn  "
-                                    style={{
-                                        padding: '0',
-
-                                    }}
-                                    id="navbarDropdownMenuLink"
+                                    className=" button1 nav-link dropdown-toggle   "
+                                    style={{ padding: '0' }}
                                     data-toggle="dropdown"
-                                    aria-expanded="false">
+                                >
                                     Departamentos
                                 </button>
+
                                 <div className="dropdown-menu"
                                     aria-labelledby="navbarDropdownMenuLink">
                                     <NavLink className="dropdown-item" to='/economia'>Economia</NavLink>
@@ -106,11 +93,7 @@ export const Navbar = () => {
             </div>
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">
-                    <span
-                        className='nav-item nav-link btn'
-                        style={{ cursor: 'default' }}
-
-                    >
+                    <span className=' usuario nav-item nav-link btn'>
                         {user.name}
                     </span>
                     <button

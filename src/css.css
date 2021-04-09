@@ -1,3 +1,12 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  height: 100vh;
+  padding-right: 0 !important;
+}
+
 .login-container {
   margin-top: 10vh;
 }
@@ -17,24 +26,34 @@
 .login-container form {
   padding: 10%;
 }
-.btnSubmit {
-  width: 100%;
+.btnSubmit1,
+.btnSubmit2 {
+  position: fixed;
+  bottom: 10rem;
+  width: 300px;
   border-radius: 1rem;
   padding: 1.5%;
   border: none;
   cursor: pointer;
-}
-
-/* .login-form .btnSubmit {
-  background-color: #fff;
-  color: green;
-  transition: ease 0.5s;
-}
-
-.login-form .btnSubmit:hover {
+  background-color: #2b8169;
   color: white;
-  background-color: green;
-} */
+  transition: 0.5s ease;
+}
+.btnSubmit1 {
+  right: 60px;
+}
+.btnSubmit2 {
+  left: 60px;
+}
+.btnSubmit1:hover,
+.btnSubmit2:hover {
+  background-color: rgb(0, 120, 215);
+  color: white;
+}
+.dropdown-item:hover {
+  background-color: rgb(0, 120, 215) !important;
+  color: white !important;
+}
 
 .login-form .btnSubmit:active {
   color: #0062cc;
@@ -46,7 +65,50 @@
   font-weight: 600;
   text-decoration: none;
 }
+.form {
+  background-color: #2b8169;
+  margin: 0 auto;
+}
 
+option {
+  font-size: 20px;
+}
+
+/* navbar */
+.text {
+  color: bisque;
+  padding: 2px;
+}
+.nav1 {
+  background-color: #2b8169;
+}
+.navLogo {
+  border: solid white 1px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.usuario,
+.navLogo {
+  cursor: default;
+}
+.button1 {
+  background-color: transparent;
+  border: none;
+  margin: 0 15px;
+}
+::selection {
+  background-color: rgb(0, 120, 215);
+  color: white;
+}
+
+/* loginScreen */
+.loginBox {
+  box-shadow: 0px 0px 5px 0px #0062cc;
+  border-radius: 10px;
+  margin-top: 25vh;
+  background-color: #2da78e85;
+  min-width: 400px;
+}
 .imageLogin {
   background: url(./imagesLoginScreen/EstadioCapitanSanLuisPinarDelRio.png)
     no-repeat center center fixed;
@@ -54,7 +116,7 @@
   height: 100vh;
   overflow: hidden;
 }
-.text {
-  color: bisque;
-  padding: 2px;
+
+form {
+  text-shadow: #fff;
 }

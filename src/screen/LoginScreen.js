@@ -75,11 +75,8 @@ export const LoginScreen = ({ history }) => {
                         }
                             , 1000)
 
-
-
-
-
                     }
+
 
                     history.replace('/form')
 
@@ -120,25 +117,19 @@ export const LoginScreen = ({ history }) => {
 
 
                 <div
-                    style={{
-                        boxShadow: '0px 0px 5px  0px #0062cc',
-                        borderRadius: '10px',
-                        marginTop: '25vh',
-                        backgroundColor: '#2da78e85',
 
-
-                    }}
-                    className='container col-4 p-5'>
+                    className='loginBox container col-4 p-5'>
                     <div className=' container ' style={{ textAlign: 'center', color: 'white' }}>
 
-                        <h1>CMI</h1>
+                        <h1 title='Control de Medios Informáticos'>CMI</h1>
                         <h3>Capitán San Luis</h3>
                     </div>
 
-                    <form onSubmit={handleSubmit} style={{ color: 'white' }}>
+                    <form onSubmit={handleSubmit} >
                         <div className="mb-3 " >
                             <label className="form-label ">Usuario</label>
                             <input type="text"
+                                autocomplete="off"
                                 className="form-control"
                                 name='usuarioAdmin'
                                 onChange={handleInputchange}
@@ -146,11 +137,13 @@ export const LoginScreen = ({ history }) => {
 
                             />
                             <div className="text">
-                                Solo usuarios con privilegios de administración.</div>
+                                Solo usuarios con privilegios de administración</div>
                         </div>
                         <div className="mb-3 ">
                             <label className="form-label">Contraseña</label>
-                            <input type="password"
+                            <input
+                                autocomplete="off"
+                                type="password"
                                 className="form-control"
                                 name='password'
                                 onChange={handleInputchange}

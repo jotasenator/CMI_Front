@@ -18,7 +18,7 @@ import { variables } from '../helpers/FormScreen/variables'
 
 export const FormScreen = () => {
 
-    const [formValues, handleInputchange] = useForm({
+    const [formValues, handleInputchange, reset] = useForm({
         departamento: '',
         responsable: '',
         noSello: '',
@@ -177,6 +177,13 @@ export const FormScreen = () => {
                                 'Se ha añadido correctamente la información a la base de datos',
                                 'success'
                             )
+                            // reset()
+                            // setTimeout(() => {
+                            //     window.location.replace('')
+
+                            // }, 2000);
+
+
 
                         })
                         .catch(() => {
@@ -195,17 +202,20 @@ export const FormScreen = () => {
     return (
         <>
 
-            <div className=" col-5  login-form">
+            <div className=" form col-5 mt-5  login-form">
                 <h3 className='pb-3' >Datos de interés </h3>
 
 
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
 
-                        <select className="form-control"
+                        <select style={{ fontSize: '20px' }}
+                            className="form-control "
                             name='departamento'
-                            onChange={handleInputchange}>
-                            <option >Elija el área de trabajo</option>
+                            onChange={handleInputchange}
+
+                        >
+                            <option disabled="disabled" selected='selected'>Elija el área de trabajo</option>
                             <option value='Economia'>Economia</option>
                             <option value="Informatica">Informatica</option>
                             <option value="RRHH">RRHH</option>
@@ -222,8 +232,10 @@ export const FormScreen = () => {
                                 // eslint-disable-next-line no-eval
                                 (eval(variable) === '') ?
                                     (<input
+                                        style={{ fontSize: '20px' }}
 
                                         className='form-control alert alert-danger'
+                                        autocomplete="off"
                                         key={index}
                                         type="text"
                                         name={variable}
@@ -236,8 +248,10 @@ export const FormScreen = () => {
                                     />) :
                                     (
                                         <input
+                                            style={{ fontSize: '20px' }}
 
                                             className='form-control alert alert-success '
+                                            autocomplete="off"
                                             key={index}
                                             type="text"
                                             name={variable}
@@ -265,7 +279,16 @@ export const FormScreen = () => {
                     >
                         <input
                             type="submit"
-                            className="btnSubmit btn-success "
+                            className="btnSubmit1  "
+                            value="Guardar " />
+                    </div>
+                    <div
+                        className="form-group"
+
+                    >
+                        <input
+                            type="submit"
+                            className="btnSubmit2  "
                             value="Guardar " />
                     </div>
 
