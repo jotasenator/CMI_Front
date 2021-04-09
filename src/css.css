@@ -6,7 +6,7 @@
   border-radius: 5px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
   padding: 1%;
-  background: #0062cc;
+  background: rgba(45, 167, 142, 0.52);
   margin-top: 10vh;
   margin-left: 30vw;
 }
@@ -25,16 +25,16 @@
   cursor: pointer;
 }
 
-.login-form .btnSubmit {
+/* .login-form .btnSubmit {
   background-color: #fff;
-  color: #0062cc;
+  color: green;
   transition: ease 0.5s;
 }
 
 .login-form .btnSubmit:hover {
   color: white;
-  background-color: blue;
-}
+  background-color: green;
+} */
 
 .login-form .btnSubmit:active {
   color: #0062cc;
@@ -45,4 +45,16 @@
   color: #fff;
   font-weight: 600;
   text-decoration: none;
+}
+
+.imageLogin {
+  background: url(./imagesLoginScreen/EstadioCapitanSanLuisPinarDelRio.png)
+    no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+.text {
+  color: bisque;
+  padding: 2px;
 }

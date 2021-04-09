@@ -27,11 +27,18 @@ export const Navbar = () => {
         <nav
 
             className="navbar navbar-expand-sm navbar-dark "
-            style={{ backgroundColor: '#0062cc' }}>
+            style={{ backgroundColor: 'rgba(45, 167, 142, 0.52)' }}>
 
 
             <Link
-                style={{ cursor: 'default', border: 'solid white 1px', borderRadius: '10px', padding: '10px' }}
+                style={{
+                    cursor: 'default',
+                    border: 'solid white 1px',
+                    borderRadius: '10px',
+                    padding: '10px',
+
+
+                }}
                 className="navbar-brand"
                 to="/"
                 title='Control de Medios Informáticos'
@@ -40,9 +47,10 @@ export const Navbar = () => {
             </Link>
 
             <div className="navbar-collapse">
-                <div className="navbar-nav">
+                <div className="navbar-nav" >
 
                     <NavLink
+
                         activeClassName="active"
                         className="nav-item nav-link"
                         exact
@@ -52,13 +60,14 @@ export const Navbar = () => {
                     </NavLink>
 
                     <button className="navbar-toggler"
+
                         type="button"
                         data-toggle="collapse"
                         data-target="1navbarNavDropdown"
                         aria-controls="navbarNavDropdown"
                         aria-expanded="false"
                         aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon" ></span>
                     </button>
                     <div className="collapse navbar-collapse"
 

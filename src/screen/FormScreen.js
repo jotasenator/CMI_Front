@@ -6,10 +6,11 @@ import { useForm } from '../components/hooks/useForm'
 import '../../src/css.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-
 import Axios from 'axios'
 
 import Swal from 'sweetalert2'
+
+import { variables } from '../helpers/FormScreen/variables'
 
 
 
@@ -18,6 +19,7 @@ import Swal from 'sweetalert2'
 export const FormScreen = () => {
 
     const [formValues, handleInputchange] = useForm({
+        departamento: '',
         responsable: '',
         noSello: '',
         identificadorEquipo: '',
@@ -82,6 +84,7 @@ export const FormScreen = () => {
     })
 
     const {
+        departamento,
         responsable,
         noSello,
         identificadorEquipo,
@@ -143,66 +146,8 @@ export const FormScreen = () => {
 
     } = formValues
 
-    const variables = [
-        'responsable',
-        'noSello',
-        'identificadorEquipo',
-        'placaMadreMarca',
-        'placaMadreModelo',
-        'placaMadreNS',
-        'placaMadreObservaciones',
-        'discoDuroMarca',
-        'discoDuroModelo',
-        'discoDuroNS',
-        'discoDuroObservaciones',
-        'memoriaRAMMarca',
-        'memoriaRAMModelo',
-        'memoriaRAMNS',
-        'memoriaRAMObservaciones',
-        'microProcesadorMarca',
-        'microProcesadorModelo',
-        'microProcesadorNS',
-        'microProcesadorObservaciones',
-        'fuenteInternaMarca',
-        'fuenteInternaModelo',
-        'fuenteInternaNS',
-        'fuenteInternaObservaciones',
-        'lectorCDDVDMarca',
-        'lectorCDDVDModelo',
-        'lectorCDDVDNS',
-        'lectorCDDVDObservaciones',
-        'computadoraNI',
-        'monitorMarca',
-        'monitorModelo',
-        'monitorNS',
-        'monitorObservaciones',
-        'monitorNI',
-        'tecladoMarca',
-        'tecladoModelo',
-        'tecladoNS',
-        'tecladoObservaciones',
-        'tecladoNI',
-        'mouseMarca',
-        'mouseModelo',
-        'mouseNS',
-        'mouseObservaciones',
-        'mouseNI',
-        'bocinasMarca',
-        'bocinasModelo',
-        'bocinasNS',
-        'bocinasObservaciones',
-        'bocinasNI',
-        'impresoraMarca',
-        'impresoraModelo',
-        'impresoraNS',
-        'impresoraObservaciones',
-        'impresoraNI',
-        'upsMarca',
-        'upsModelo',
-        'upsNS',
-        'upsObservaciones',
-        'upsNI',
-    ]
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -211,18 +156,17 @@ export const FormScreen = () => {
             .then(({ data }) => {
 
                 data.eventos.find(x =>
+                    x.departamento === departamento
+                    &&
                     x.computadoraNI === computadoraNI
                     &&
                     x.noSello === noSello
-                    &&
-                    x.responsable === responsable
-                    &&
-                    x.identificadorEquipo === identificadorEquipo
+
                 )
                     ?
                     Swal.fire(
                         'Error   ',
-                        'Esta información ya está almacenada',
+                        'Esta computadora está inventariada',
                         'error'
                     )
                     :
@@ -238,7 +182,7 @@ export const FormScreen = () => {
                         .catch(() => {
                             Swal.fire(
                                 'Error   ',
-                                'No se ha añadido la información a la base de datos',
+                                'Falta información por ser recolectada',
                                 'error'
                             )
 
@@ -267,6 +211,7 @@ export const FormScreen = () => {
                             <option value="RRHH">RRHH</option>
                             <option value="Comedor">Comedor</option>
                             <option value="CVP">CVP</option>
+                            <option value="comision">Comisión de Cuadros</option>
                         </select>
                     </div>
                     {/*renderizado opcional para tener un cambio de color en los inputs */}
@@ -311,25 +256,6 @@ export const FormScreen = () => {
                         </div>
 
                     )}
-                    {/* este era el codigo original de map de los inputs */}
-                    {/* {variables.map((x, index) =>
-                        <div className="form-group">
-
-                            <input
-
-                                className='form-control alert alert-danger '
-                                key={index}
-                                type="text"
-                                name={x}
-                                placeholder={x}
-                                onChange={handleInputchange}
-                                // eslint-disable-next-line no-eval
-                                value={eval(x)}
-
-                            />
-                        </div>
-
-                    )} */}
 
 
                     {/* Bton de guardar la informacion en la base de datos */}
@@ -339,7 +265,7 @@ export const FormScreen = () => {
                     >
                         <input
                             type="submit"
-                            className="btnSubmit  "
+                            className="btnSubmit btn-success "
                             value="Guardar " />
                     </div>
 

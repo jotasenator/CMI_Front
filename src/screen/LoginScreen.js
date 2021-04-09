@@ -5,6 +5,8 @@ import { AuthContext } from '../auth/AuthContext'
 import { types } from '../types/types'
 import bcrypt from '../../node_modules/bcryptjs'
 import Swal from 'sweetalert2'
+import '../css.css'
+
 
 
 
@@ -48,11 +50,20 @@ export const LoginScreen = ({ history }) => {
 
                     if (verificar !== undefined) {
 
-                        Swal.fire(
-                            'Correcto   ',
-                            'Usuario verificado con éxito',
-                            'success'
-                        )
+                        // Swal.fire(
+                        //     'Correcto   ',
+                        //     'Usuario verificado con éxito',
+                        //     'success',
+
+                        // )
+                        Swal.fire({
+
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Usuario verificado con éxito',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
 
                         setTimeout(() => {
                             dispatch({
@@ -105,49 +116,55 @@ export const LoginScreen = ({ history }) => {
 
     return (
         <>
-            <div className='container mt-5' style={{ textAlign: 'center' }}>
+            <div className='imageLogin'>
 
-                <h1>Bienvenido a CMI Estadio Capitán San Luis</h1>
-            </div>
 
-            <div
-                style={{
-                    boxShadow: '0px 0px 5px  0px #0062cc',
-                    borderRadius: '10px',
-                    marginTop: '10vh'
+                <div
+                    style={{
+                        boxShadow: '0px 0px 5px  0px #0062cc',
+                        borderRadius: '10px',
+                        marginTop: '25vh',
+                        backgroundColor: '#2da78e85',
 
-                }}
-                className='container col-3 p-5'>
 
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3 ">
-                        <label className="form-label">Usuario</label>
-                        <input type="text"
-                            className="form-control"
-                            name='usuarioAdmin'
-                            onChange={handleInputchange}
-                            value={usuarioAdmin}
+                    }}
+                    className='container col-4 p-5'>
+                    <div className=' container ' style={{ textAlign: 'center', color: 'white' }}>
 
-                        />
-                        <div className="text-muted">
-                            Solo usuarios con privilegios de administración.</div>
+                        <h1>CMI</h1>
+                        <h3>Capitán San Luis</h3>
                     </div>
-                    <div className="mb-3 ">
-                        <label className="form-label">Contraseña</label>
-                        <input type="password"
-                            className="form-control"
-                            name='password'
-                            onChange={handleInputchange}
-                            value={password}
 
-                        />
-                    </div>
-                    <div className="mb-3 form-check">
+                    <form onSubmit={handleSubmit} style={{ color: 'white' }}>
+                        <div className="mb-3 " >
+                            <label className="form-label ">Usuario</label>
+                            <input type="text"
+                                className="form-control"
+                                name='usuarioAdmin'
+                                onChange={handleInputchange}
+                                value={usuarioAdmin}
+
+                            />
+                            <div className="text">
+                                Solo usuarios con privilegios de administración.</div>
+                        </div>
+                        <div className="mb-3 ">
+                            <label className="form-label">Contraseña</label>
+                            <input type="password"
+                                className="form-control"
+                                name='password'
+                                onChange={handleInputchange}
+                                value={password}
+
+                            />
+                        </div>
+                        <div className="mb-3 form-check">
 
 
-                    </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                </form>
+                        </div>
+                        <button type="submit" className="btn btn-primary">Submit</button>
+                    </form>
+                </div>
             </div>
 
 
