@@ -82,7 +82,6 @@ export const LoginScreen = ({ history }) => {
 
 
 
-
                     if (!(verificar !== undefined)) {
 
                         Swal.fire(
@@ -155,7 +154,9 @@ export const LoginScreen = ({ history }) => {
 
 
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary mt-3">
+                            Entrar al sistema
+                            </button>
                     </form>
                 </div>
             </div>

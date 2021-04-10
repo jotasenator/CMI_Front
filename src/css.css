@@ -96,27 +96,25 @@ option {
   border: none;
   margin: 0 15px;
 }
-::selection {
-  background-color: rgb(0, 120, 215);
-  color: white;
-}
 
 /* loginScreen */
 .loginBox {
   box-shadow: 0px 0px 5px 0px #0062cc;
   border-radius: 10px;
   margin-top: 25vh;
+  left: 20vw;
   background-color: #2da78e85;
   min-width: 400px;
 }
 .imageLogin {
-  background: url(./imagesLoginScreen/EstadioCapitanSanLuisPinarDelRio.png)
-    no-repeat center center fixed;
+  background: url(./images/imagesLoginScreen/estadio_polivalente4.png) no-repeat
+    center center fixed;
   background-size: cover;
   height: 100vh;
   overflow: hidden;
 }
 
-form {
-  text-shadow: #fff;
+label {
+  font-weight: bold;
+  color: whitesmoke;
 }
