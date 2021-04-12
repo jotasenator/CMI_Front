@@ -3,9 +3,10 @@ import { useForm } from '../components/hooks/useForm'
 import Axios from 'axios'
 import { AuthContext } from '../auth/AuthContext'
 import { types } from '../types/types'
-import bcrypt from '../../node_modules/bcryptjs'
+import bcrypt from 'bcryptjs'
 import Swal from 'sweetalert2'
 import '../css.css'
+import { IconoInicio } from '../components/loginScreen/IconoInicio'
 
 
 
@@ -86,7 +87,7 @@ export const LoginScreen = ({ history }) => {
 
                         Swal.fire(
                             'Error',
-                            'Usuario NO existe',
+                            'Usuario no verificado',
                             'error'
                         )
 
@@ -112,27 +113,41 @@ export const LoginScreen = ({ history }) => {
 
     return (
         <>
-            <div className='imageLogin'>
+            <div className='imageLogin' >
 
 
-                <div
+                <div className='loginBox container col-4 p-5'>
+                    <div className=' container container-mio' >
+                        <div className='loginTitleIcon'>
+                            <h1
+                                title='Control de Medios Informáticos'>
+                                CMI
+                        </h1>
+                            <div className='m-3'>
 
-                    className='loginBox container col-4 p-5'>
-                    <div className=' container ' style={{ textAlign: 'center', color: 'white' }}>
+                                <IconoInicio />
+                            </div>
 
-                        <h1 title='Control de Medios Informáticos'>CMI</h1>
-                        <h3>Capitán San Luis</h3>
+
+
+
+                        </div>
+
+                        <h3>
+                            Capitán San Luis
+                        </h3>
                     </div>
 
                     <form onSubmit={handleSubmit} >
                         <div className="mb-3 " >
                             <label className="form-label ">Usuario</label>
                             <input type="text"
-                                autocomplete="off"
+                                autoComplete="off"
                                 className="form-control"
                                 name='usuarioAdmin'
                                 onChange={handleInputchange}
                                 value={usuarioAdmin}
+                                autoFocus
 
                             />
                             <div className="text">
@@ -141,7 +156,7 @@ export const LoginScreen = ({ history }) => {
                         <div className="mb-3 ">
                             <label className="form-label">Contraseña</label>
                             <input
-                                autocomplete="off"
+                                autoComplete="off"
                                 type="password"
                                 className="form-control"
                                 name='password'
@@ -158,8 +173,11 @@ export const LoginScreen = ({ history }) => {
                             Entrar al sistema
                             </button>
                     </form>
+
                 </div>
+
             </div>
+
 
 
 

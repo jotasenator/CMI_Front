@@ -8,6 +8,7 @@ import { FormScreen } from '../screen/FormScreen'
 import { InformaticaScreen } from '../../src/screen/departamentos/InformaticaScreen'
 import { RecursosHumanosScreen } from '../../src/screen/departamentos/RecursosHumanosScreen'
 import { Navbar } from '../ui/Navbar'
+import { ComedorScreen } from '../screen/departamentos/ComedorScreen'
 
 
 export const DashboardRoutes = () => {
@@ -24,6 +25,7 @@ export const DashboardRoutes = () => {
                     <Route exact path='/cvp' component={CVPScreen} />
                     <Route exact path='/comision' component={ComisionCuadrosScreen} />
                     <Route exact path='/rrhh' component={RecursosHumanosScreen} />
+                    <Route exact path='/comedor' component={ComedorScreen} />
 
                     <Redirect to='/form' />
                 </Switch>

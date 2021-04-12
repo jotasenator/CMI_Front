@@ -177,7 +177,15 @@ export const FormScreen = () => {
                                 'Se ha añadido correctamente la información a la base de datos',
                                 'success'
                             )
+                            // smooth scroll
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth"
+                            })
+                            // setear lso valores de lso input al valor inicial pero 
+                            // el select option lo asume pero no cambia la tag al default value de seleccion
                             // reset()
+                            // cuando reseteo no puedo entra rla informacion de la pesetanha que se queda anterior
                             // setTimeout(() => {
                             //     window.location.replace('')
 
@@ -215,18 +223,19 @@ export const FormScreen = () => {
                             onChange={handleInputchange}
 
                         >
-                            <option disabled="disabled" selected='selected'>Elija el área de trabajo</option>
-                            <option value='Economia'>Economia</option>
-                            <option value="Informatica">Informatica</option>
-                            <option value="RRHH">RRHH</option>
+                            <option defaultValue>Elija el área de trabajo</option>
                             <option value="Comedor">Comedor</option>
-                            <option value="CVP">CVP</option>
-                            <option value="comision">Comisión de Cuadros</option>
+                            <option value="Comisión de Cuadros">Comisión de Cuadros</option>
+                            <option value="Dirección">Dirección</option>
+                            <option value='Economía'>Economia</option>
+                            <option value="Informática">Informática</option>
+                            <option value="Recursos Humanos">Recursos Humanos</option>
+                            <option value="Seguridad y Protección">Seguridad y Protección</option>
                         </select>
                     </div>
                     {/*renderizado opcional para tener un cambio de color en los inputs */}
                     {variables.map((variable, index) =>
-                        <div className="form-group">
+                        <div key={index} className="form-group">
 
                             {
                                 // eslint-disable-next-line no-eval
@@ -235,7 +244,7 @@ export const FormScreen = () => {
                                         style={{ fontSize: '20px' }}
 
                                         className='form-control alert alert-danger'
-                                        autocomplete="off"
+                                        autoComplete="off"
                                         key={index}
                                         type="text"
                                         name={variable}
@@ -251,7 +260,7 @@ export const FormScreen = () => {
                                             style={{ fontSize: '20px' }}
 
                                             className='form-control alert alert-success '
-                                            autocomplete="off"
+                                            autoComplete="off"
                                             key={index}
                                             type="text"
                                             name={variable}

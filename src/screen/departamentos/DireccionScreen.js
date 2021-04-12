@@ -6,8 +6,8 @@ export const DireccionScreen = () => {
     return (
         <div className='container mt-5'>
 
-            Direccion
-            <TableScreen />
+            <h2>Dirección</h2>
+            <TableScreen departamento='Dirección' />
 
         </div>
     )

@@ -76,12 +76,14 @@ export const Navbar = () => {
 
                                 <div className="dropdown-menu"
                                     aria-labelledby="navbarDropdownMenuLink">
-                                    <NavLink className="dropdown-item" to='/economia'>Economia</NavLink>
-                                    <NavLink className="dropdown-item" to='/informatica' >informatica</NavLink>
+                                    <NavLink className="dropdown-item" to='/comedor'>Comedor</NavLink>
+                                    <NavLink className="dropdown-item" to='/comision'>Comisión de Cuadros</NavLink>
+                                    <NavLink className="dropdown-item" to='/direccion'>Dirección</NavLink>
+                                    <NavLink className="dropdown-item" to='/economia'>Economía</NavLink>
+                                    <NavLink className="dropdown-item" to='/informatica' >informática</NavLink>
                                     <NavLink className="dropdown-item" to='/rrhh' >Recursos Humanos</NavLink>
-                                    <NavLink className="dropdown-item" to='/direccion'>Direccion</NavLink>
-                                    <NavLink className="dropdown-item" to='/comision'>Comision de Cuadros</NavLink>
-                                    <NavLink className="dropdown-item" to='/cvp'>Custodios</NavLink>
+                                    <NavLink className="dropdown-item" to='/cvp'>Seguridad y Protección</NavLink>
+
 
                                 </div>
                             </li>

@@ -5,8 +5,8 @@ import { TableScreen } from '../../components/TableScreen'
 export const CVPScreen = () => {
     return (
         <div className='container mt-5'>
-            CVP
-            <TableScreen />
+            <h2>Seguridad y Protección</h2>
+            <TableScreen departamento='Seguridad y Protección' />
         </div>
     )
 }

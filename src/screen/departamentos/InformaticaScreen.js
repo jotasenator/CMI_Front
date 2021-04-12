@@ -6,8 +6,8 @@ export const InformaticaScreen = () => {
 
     return (
         <div className='container mt-5'>
-            Informatica
-            <TableScreen departamento='Informatica' />
+            <h2>Informática</h2>
+            <TableScreen departamento='Informática' />
         </div>
     )
 }
