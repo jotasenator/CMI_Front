@@ -172,11 +172,16 @@ export const FormScreen = () => {
                     :
                     Axios.post('http://localhost:4000/api/', formValues)
                         .then(() => {
-                            Swal.fire(
-                                'Correcto   ',
-                                'Se ha añadido correctamente la información a la base de datos',
-                                'success'
-                            )
+
+                            Swal.fire({
+
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Información añadida correctamente',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+
                             // smooth scroll
                             window.scrollTo({
                                 top: 0,
@@ -186,10 +191,11 @@ export const FormScreen = () => {
                             // el select option lo asume pero no cambia la tag al default value de seleccion
                             // reset()
                             // cuando reseteo no puedo entra rla informacion de la pesetanha que se queda anterior
-                            // setTimeout(() => {
-                            //     window.location.replace('')
 
-                            // }, 2000);
+                            setTimeout(() => {
+                                window.location.replace('')
+
+                            }, 1000);
 
 
 
@@ -222,16 +228,38 @@ export const FormScreen = () => {
                             name='departamento'
                             onChange={handleInputchange}
 
+
+
                         >
-                            <option defaultValue>Elija el área de trabajo</option>
-                            <option value="Comedor">Comedor</option>
-                            <option value="Comisión de Cuadros">Comisión de Cuadros</option>
-                            <option value="Dirección">Dirección</option>
-                            <option value='Economía'>Economia</option>
-                            <option value="Informática">Informática</option>
-                            <option value="Recursos Humanos">Recursos Humanos</option>
-                            <option value="Seguridad y Protección">Seguridad y Protección</option>
+                            <option defaultValue hidden >Elija el área de trabajo</option>
+                            {/* estadio */}
+                            <optgroup label="Estadio">
+                                <option value="Actividad Deportiva">Actividad Deportiva</option>
+                                <option value="Aseguramiento">Aseguramiento</option>
+                                <option value="Cabina de Baseball">Cabina de Baseball</option>
+                                <option value="Cultura Fisica">Cultura Fisica</option>
+                                <option value="Dirección Economía Provincial">Dirección Economía Provincial</option>
+                                <option value="Dirección Estadio">Dirección Estadio</option>
+                                <option value="Economía Estadio">Economía Estadio</option>
+                                <option value="Economía Unidad Presupuestada">Economía Unidad Presupuestada</option>
+                                <option value="Inversiones">Inversiones</option>
+                                <option value="Nodo Informática">Nodo Informática</option>
+                                <option value="Recursos Humanos">Recursos Humanos</option>
+                                <option value="Sala Navegación">Sala Navegación</option>
+                                <option value="Seguridad y Protección">Seguridad y Protección</option>
+                            </optgroup>
+                            {/* polivalente */}
+                            <optgroup label="Polivalente">
+                                <option value="Colaboración">Colaboración</option>
+                                <option value="Comisión de Cuadros">Comisión de Cuadros</option>
+                                <option value="Dirección Polivalente">Dirección Polivalente</option>
+                                <option value="Inspección">Inspección</option>
+                                <option value="Organización">Organización</option>
+                                <option value="Subdirección Docencia">Subdirección Docencia</option>
+                                <option value="Subdirección Polivalente">Subdirección Polivalente</option>
+                            </optgroup>
                         </select>
+
                     </div>
                     {/*renderizado opcional para tener un cambio de color en los inputs */}
                     {variables.map((variable, index) =>

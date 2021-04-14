@@ -10,20 +10,34 @@ import { DeleteButton } from './TableButtons/DeleteButton'
 
 
 export const TableScreen = ({ departamento }) => {
+
+
     const [dataState, setDataState] = useState({})
 
     useEffect(() => {
+
+        let mounted = true
+
+
         Axios.get('http://localhost:4000/api/')
             .then(({ data }) => {
                 const dataFiltrada = data.eventos.filter(x =>
                     x.departamento === departamento
 
                 )
+                if (mounted) {
 
-                setDataState(dataFiltrada)
+                    setDataState(dataFiltrada)
+                }
 
 
             })
+            .catch((e) => {
+
+            })
+
+
+        return () => mounted = false
 
 
     }, [dataState, departamento])
@@ -59,7 +73,7 @@ export const TableScreen = ({ departamento }) => {
 
                         <tr  >
                             <th scope="col">No</th>
-                            <th scope="col">Departamento</th>
+                            {/* <th scope="col">Departamento</th> */}
                             <th scope="col">Responsable</th>
                             <th scope="col">NoSello</th>
                             <th scope="col">IdentificadorEquipo</th>
@@ -131,7 +145,7 @@ export const TableScreen = ({ departamento }) => {
                                 <tr key={informacion.id} >
                                     <th scope='row'>{index + 1}</th>
 
-                                    <td >{informacion.departamento}</td>
+                                    {/* <td >{informacion.departamento}</td> */}
                                     <td>{informacion.responsable}</td>
                                     <td>{informacion.noSello}</td>
                                     <td>{informacion.identificadorEquipo}</td>
@@ -142,7 +156,7 @@ export const TableScreen = ({ departamento }) => {
                                     <td>{informacion.discoDuroMarca}</td>
                                     <td>{informacion.discoDuroModelo}</td>
                                     <td>{informacion.discoDuroNS}</td>
-                                    <td>{informacion.discoDuroObservaciones}</td>
+                                    <td >{informacion.discoDuroObservaciones}</td>
                                     <td>{informacion.memoriaRAMMarca}</td>
                                     <td>{informacion.memoriaRAMModelo}</td>
                                     <td>{informacion.memoriaRAMNS}</td>

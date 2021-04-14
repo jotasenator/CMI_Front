@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min'
+import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 import { Link, NavLink, useHistory } from 'react-router-dom'
 import { AuthContext } from '../auth/AuthContext'
@@ -50,8 +50,6 @@ export const Navbar = () => {
                     </NavLink>
 
                     <button className="navbar-toggler"
-
-
                         type="button"
                         data-toggle="collapse"
                         data-target="1navbarNavDropdown"
@@ -60,9 +58,7 @@ export const Navbar = () => {
                         aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" ></span>
                     </button>
-                    <div className="collapse navbar-collapse"
-
-                        id="navbarNavDropdown">
+                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
 
                             <li className="nav-item dropdown  ">
@@ -76,13 +72,33 @@ export const Navbar = () => {
 
                                 <div className="dropdown-menu"
                                     aria-labelledby="navbarDropdownMenuLink">
-                                    <NavLink className="dropdown-item" to='/comedor'>Comedor</NavLink>
-                                    <NavLink className="dropdown-item" to='/comision'>Comisión de Cuadros</NavLink>
-                                    <NavLink className="dropdown-item" to='/direccion'>Dirección</NavLink>
-                                    <NavLink className="dropdown-item" to='/economia'>Economía</NavLink>
-                                    <NavLink className="dropdown-item" to='/informatica' >informática</NavLink>
-                                    <NavLink className="dropdown-item" to='/rrhh' >Recursos Humanos</NavLink>
-                                    <NavLink className="dropdown-item" to='/cvp'>Seguridad y Protección</NavLink>
+
+                                    {/* estadio */}
+                                    <h5 className="dropdown-header"><i>Estadio</i></h5>
+
+                                    <NavLink className="dropdown-item" to='/actividadDeportiva'>Actividad Deportiva</NavLink>
+                                    <NavLink className="dropdown-item" to='/aseguramiento' >Aseguramiento</NavLink>
+                                    <NavLink className="dropdown-item" to='/cabinaBaseball'>Cabina de Baseball</NavLink>
+                                    <NavLink className="dropdown-item" to='/culturaFisica'>Cultura Fisica</NavLink>
+                                    <NavLink className="dropdown-item" to='/direccionEconomiaProvincial'>Dirección Economía Provincial</NavLink>
+                                    <NavLink className="dropdown-item" to='/direccionEstadio'>Dirección Estadio</NavLink>
+                                    <NavLink className="dropdown-item" to='/economiaEstadio'>Economía Estadio</NavLink>
+                                    <NavLink className="dropdown-item" to='/economiaUnidadPresupuestada'>Economía Unidad Presupuestada</NavLink>
+                                    <NavLink className="dropdown-item" to='/inversiones' >Inversiones</NavLink>
+                                    <NavLink className="dropdown-item" to='/nodoInformatica'>Nodo Informática</NavLink>
+                                    <NavLink className="dropdown-item" to='/recursosHumanos'>Recursos Humanos</NavLink>
+                                    <NavLink className="dropdown-item" to='/salaNavegacion'>Sala Navegación</NavLink>
+                                    <NavLink className="dropdown-item" to='/seguridadProteccion'>Seguridad y Protección</NavLink>
+                                    {/* polivalente */}
+                                    <h5 className="dropdown-header"><i>Polivalente</i></h5>
+
+                                    <NavLink className="dropdown-item" to='/colaboracion'>Colaboración</NavLink>
+                                    <NavLink className="dropdown-item" to='/comisionCuadros'>Comisión de Cuadros</NavLink>
+                                    <NavLink className="dropdown-item" to='/direccionPolivalente'>Dirección Polivalente</NavLink>
+                                    <NavLink className="dropdown-item" to='/inspeccion'>Inspección</NavLink>
+                                    <NavLink className="dropdown-item" to='/organizacion'>Organización</NavLink>
+                                    <NavLink className="dropdown-item" to='/subdireccionDocencia'>Subdirección Docencia</NavLink>
+                                    <NavLink className="dropdown-item" to='/subdireccionPolivalente'>Subdirección Polivalente</NavLink>
 
 
                                 </div>

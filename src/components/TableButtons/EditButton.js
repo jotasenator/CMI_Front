@@ -42,6 +42,9 @@ export const EditButton = ({ id }) => {
 
 
             }
+        }).catch((err) => {
+            console.log(err)
+
         })
     }
 
