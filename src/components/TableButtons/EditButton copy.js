@@ -7,7 +7,6 @@ import Axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 
-
 export const EditButton = ({
     id,
     responsable,
@@ -83,73 +82,10 @@ export const EditButton = ({
             cancelButtonText: 'Cancelar',
             confirmButtonText: 'Continuar'
         }).then((result) => {
-
             if (result.isConfirmed) {
                 Axios.put(`http://localhost:4000/api/${id}`,
 
-                    {
-                        id,
-                        responsable,
-                        noSello,
-                        identificadorEquipo,
-                        placaMadreMarca,
-                        placaMadreModelo,
-                        placaMadreNS,
-                        placaMadreObservaciones,
-                        discoDuroMarca,
-                        discoDuroModelo,
-                        discoDuroNS,
-                        discoDuroObservaciones,
-                        memoriaRAMMarca,
-                        memoriaRAMModelo,
-                        memoriaRAMNS,
-                        memoriaRAMObservaciones,
-                        microProcesadorMarca,
-                        microProcesadorModelo,
-                        microProcesadorNS,
-                        microProcesadorObservaciones,
-                        fuenteInternaMarca,
-                        fuenteInternaModelo,
-                        fuenteInternaNS,
-                        fuenteInternaObservaciones,
-                        lectorCDDVDMarca,
-                        lectorCDDVDModelo,
-                        lectorCDDVDNS,
-                        lectorCDDVDObservaciones,
-                        computadoraNI,
-                        monitorMarca,
-                        monitorModelo,
-                        monitorNS,
-                        monitorObservaciones,
-                        monitorNI,
-                        tecladoMarca,
-                        tecladoModelo,
-                        tecladoNS,
-                        tecladoObservaciones,
-                        tecladoNI,
-                        mouseMarca,
-                        mouseModelo,
-                        mouseNS,
-                        mouseObservaciones,
-                        mouseNI,
-                        bocinasMarca,
-                        bocinasModelo,
-                        bocinasNS,
-                        bocinasObservaciones,
-                        bocinasNI,
-                        impresoraMarca,
-                        impresoraModelo,
-                        impresoraNS,
-                        impresoraObservaciones,
-                        impresoraNI,
-                        upsMarca,
-                        upsModelo,
-                        upsNS,
-                        upsObservaciones,
-                        upsNI
-
-                    }
-                )
+                    { noSello })
                     .then(() => {
                         Swal.fire(
                             '',
@@ -166,7 +102,12 @@ export const EditButton = ({
                         )
 
                     })
+
+
             }
+        }).catch((err) => {
+            console.log(err)
+
         })
     }
 

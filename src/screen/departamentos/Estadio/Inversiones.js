@@ -1,5 +1,5 @@
 import React from 'react'
-import { TableScreen } from '../../../components/TableScreen'
+import { TableScreen } from '../../TableScreen'
 
 
 export const Inversiones = () => {

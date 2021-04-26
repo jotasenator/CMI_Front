@@ -16,7 +16,7 @@ import { variables } from '../helpers/FormScreen/variables'
 
 
 
-export const FormScreen = () => {
+export const FormScreenEstadio = () => {
 
     const [formValues, handleInputchange, reset] = useForm({
         departamento: '',
@@ -217,7 +217,7 @@ export const FormScreen = () => {
         <>
 
             <div className=" form col-5 mt-5  login-form">
-                <h3 className='pb-3' >Datos de interés </h3>
+                <h3 className='pb-3' >Datos de interés</h3>
 
 
                 <form onSubmit={handleSubmit}>
@@ -233,11 +233,11 @@ export const FormScreen = () => {
                         >
                             <option defaultValue hidden >Elija el área de trabajo</option>
                             {/* estadio */}
-                            <optgroup label="Estadio">
+                            <optgroup label="Estadio Capitán San Luis">
                                 <option value="Actividad Deportiva">Actividad Deportiva</option>
                                 <option value="Aseguramiento">Aseguramiento</option>
                                 <option value="Cabina de Baseball">Cabina de Baseball</option>
-                                <option value="Cultura Fisica">Cultura Fisica</option>
+                                <option value="Cultura Fisica">Cultura Física</option>
                                 <option value="Dirección Economía Provincial">Dirección Economía Provincial</option>
                                 <option value="Dirección Estadio">Dirección Estadio</option>
                                 <option value="Economía Estadio">Economía Estadio</option>
@@ -248,16 +248,7 @@ export const FormScreen = () => {
                                 <option value="Sala Navegación">Sala Navegación</option>
                                 <option value="Seguridad y Protección">Seguridad y Protección</option>
                             </optgroup>
-                            {/* polivalente */}
-                            <optgroup label="Polivalente">
-                                <option value="Colaboración">Colaboración</option>
-                                <option value="Comisión de Cuadros">Comisión de Cuadros</option>
-                                <option value="Dirección Polivalente">Dirección Polivalente</option>
-                                <option value="Inspección">Inspección</option>
-                                <option value="Organización">Organización</option>
-                                <option value="Subdirección Docencia">Subdirección Docencia</option>
-                                <option value="Subdirección Polivalente">Subdirección Polivalente</option>
-                            </optgroup>
+
                         </select>
 
                     </div>

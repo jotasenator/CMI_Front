@@ -3,7 +3,9 @@ import { Redirect, Route, Switch } from 'react-router'
 
 import { Navbar } from '../ui/Navbar'
 
-import { FormScreen } from '../screen/FormScreen'
+import { FormScreenEstadio } from '../screen/FormScreenEstadio'
+import { FormScreenPolivalente } from '../screen/FormScreenPolivalente'
+
 
 
 //estadio  13 departamentos
@@ -39,7 +41,10 @@ export const DashboardRoutes = () => {
             <Navbar />
             <div>
                 <Switch>
-                    <Route exact path='/form' component={FormScreen} />
+                    <Route exact path='/formEstadio' component={FormScreenEstadio} />
+
+                    <Route exact path='/formEstadio' component={FormScreenEstadio} />
+                    <Route exact path='/formPolivalente' component={FormScreenPolivalente} />
 
                     {/* Estadio */}
                     <Route exact path='/actividadDeportiva' component={ActividadDeportiva} />
@@ -67,7 +72,7 @@ export const DashboardRoutes = () => {
 
 
 
-                    <Redirect to='/form' />
+                    <Redirect to='/formEstadio' />
                 </Switch>
             </div>
 

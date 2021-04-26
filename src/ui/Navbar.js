@@ -39,7 +39,7 @@ export const Navbar = () => {
             <div className="navbar-collapse" >
                 <div className="navbar-nav" >
 
-                    <NavLink
+                    {/* <NavLink
 
                         activeClassName="active"
                         className="nav-item nav-link"
@@ -47,7 +47,7 @@ export const Navbar = () => {
                         to="/"
                     >
                         Planilla
-                    </NavLink>
+                    </NavLink> */}
 
                     <button className="navbar-toggler"
                         type="button"
@@ -103,11 +103,52 @@ export const Navbar = () => {
 
                                 </div>
                             </li>
+
                         </ul>
                     </div>
 
 
                 </div>
+            </div>
+
+            <div className="navbar-collapse" >
+                <div className="navbar-nav" >
+                    <button className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="1navbarNavDropdown"
+                        aria-controls="navbarNavDropdown"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon" ></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul className="navbar-nav">
+
+                            <li className="nav-item dropdown  ">
+                                <button
+                                    className=" button1 nav-link dropdown-toggle   "
+                                    style={{ padding: '0' }}
+                                    data-toggle="dropdown"
+                                >
+                                    Planillas
+                                </button>
+
+                                <div className="dropdown-menu"
+                                    aria-labelledby="navbarDropdownMenuLink">
+
+                                    <NavLink className="dropdown-item" to='/formEstadio'>Estadio</NavLink>
+                                    <NavLink className="dropdown-item" to='/formPolivalente' >Polivalente</NavLink>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+
             </div>
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">

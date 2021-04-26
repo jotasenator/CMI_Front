@@ -27,27 +27,16 @@ body {
 .login-container form {
   padding: 10%;
 }
-.btnSubmit1,
-.btnSubmit2 {
-  position: fixed;
-  bottom: 10rem;
-  width: 300px;
-  border-radius: 1rem;
-  padding: 1.5%;
-  border: none;
+.btnSubmit1 {
   cursor: pointer;
   background-color: #2b8169;
+  width: 100%;
   color: white;
+  border-radius: 10px;
   transition: 0.5s ease;
 }
-.btnSubmit1 {
-  right: 60px;
-}
-.btnSubmit2 {
-  left: 60px;
-}
-.btnSubmit1:hover,
-.btnSubmit2:hover {
+
+.btnSubmit1:hover {
   background-color: rgb(0, 120, 215);
   color: white;
 }
@@ -69,8 +58,11 @@ body {
 .form {
   background-color: #2b8169;
   margin: 0 auto;
+  margin-bottom: 100px;
 }
-
+.login-form {
+  min-width: 500px;
+}
 option {
   font-size: 20px;
 }
