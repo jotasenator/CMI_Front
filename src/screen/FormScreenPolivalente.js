@@ -1,20 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-
 import { useForm } from '../components/hooks/useForm'
-
+import Axios from 'axios'
+import Swal from 'sweetalert2'
+import { variables } from '../helpers/variables'
 import '../../src/css.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-
-import Axios from 'axios'
-
-import Swal from 'sweetalert2'
-
-import { variables } from '../helpers/FormScreen/variables'
-
-
-
-
 
 export const FormScreenPolivalente = () => {
 
@@ -78,8 +69,6 @@ export const FormScreenPolivalente = () => {
         upsNS: '',
         upsObservaciones: '',
         upsNI: '',
-
-
 
     })
 
@@ -145,9 +134,6 @@ export const FormScreenPolivalente = () => {
         upsNI,
 
     } = formValues
-
-
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -227,8 +213,6 @@ export const FormScreenPolivalente = () => {
                             className="form-control "
                             name='departamento'
                             onChange={handleInputchange}
-
-
 
                         >
                             <option defaultValue hidden >Elija el área de trabajo</option>

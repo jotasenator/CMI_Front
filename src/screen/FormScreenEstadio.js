@@ -1,17 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-
 import { useForm } from '../components/hooks/useForm'
+import Axios from 'axios'
+import Swal from 'sweetalert2'
+import { variables } from '../helpers/variables'
 
 import '../../src/css.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-
-import Axios from 'axios'
-
-import Swal from 'sweetalert2'
-
-import { variables } from '../helpers/FormScreen/variables'
-
 
 
 
@@ -215,11 +210,8 @@ export const FormScreenEstadio = () => {
 
     return (
         <>
-
             <div className=" form col-5 mt-5  login-form">
                 <h3 className='pb-3' >Datos de interés</h3>
-
-
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
 
@@ -316,7 +308,7 @@ export const FormScreenEstadio = () => {
                         <input
 
                             type="submit"
-                            className="btnSubmit1 p-3 btn btn-primary "
+                            className=" btnSubmit1 p-3 btn btn-primary "
                             value="Guardar " />
                     </div>
 

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min'
-
 import { Link, NavLink, useHistory } from 'react-router-dom'
 import { AuthContext } from '../auth/AuthContext'
 import { types } from '../types/types'
+import Swal from 'sweetalert2'
 
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min'
 import '../css.css'
 
 
@@ -25,6 +25,8 @@ export const Navbar = () => {
     }
 
 
+
+
     return (
         <nav className=" nav1 navbar navbar-expand-sm navbar-dark ">
 
@@ -35,19 +37,63 @@ export const Navbar = () => {
             >
                 CMI Estadio Capitán San Luis
             </Link>
+            <div className="navbar-collapse" >
+                <div className="navbar-nav" >
+                    <button className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="1navbarNavDropdown"
+                        aria-controls="navbarNavDropdown"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon" ></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul className="navbar-nav">
+
+                            <li className="nav-item dropdown  ">
+                                <button
+                                    className=" button1 nav-link dropdown-toggle   "
+                                    style={{ padding: '0' }}
+                                    data-toggle="dropdown"
+                                >
+                                    Planillas
+                                </button>
+
+                                <div className="dropdown-menu"
+                                    aria-labelledby="navbarDropdownMenuLink">
+
+                                    <NavLink onClick={() => Swal.fire({
+                                        position: 'center',
+                                        icon: 'success',
+                                        title: 'Capitán San Luis',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+
+                                    } className="dropdown-item" to='/formEstadio'>Estadio</NavLink>
+                                    <NavLink onClick={() => Swal.fire({
+                                        position: 'center',
+                                        icon: 'success',
+                                        title: 'Polivalente 19 de noviembre',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    } className="dropdown-item" to='/formPolivalente' >Polivalente</NavLink>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+
+            </div>
 
             <div className="navbar-collapse" >
                 <div className="navbar-nav" >
-
-                    {/* <NavLink
-
-                        activeClassName="active"
-                        className="nav-item nav-link"
-                        exact
-                        to="/"
-                    >
-                        Planilla
-                    </NavLink> */}
 
                     <button className="navbar-toggler"
                         type="button"
@@ -111,45 +157,7 @@ export const Navbar = () => {
                 </div>
             </div>
 
-            <div className="navbar-collapse" >
-                <div className="navbar-nav" >
-                    <button className="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="1navbarNavDropdown"
-                        aria-controls="navbarNavDropdown"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon" ></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul className="navbar-nav">
 
-                            <li className="nav-item dropdown  ">
-                                <button
-                                    className=" button1 nav-link dropdown-toggle   "
-                                    style={{ padding: '0' }}
-                                    data-toggle="dropdown"
-                                >
-                                    Planillas
-                                </button>
-
-                                <div className="dropdown-menu"
-                                    aria-labelledby="navbarDropdownMenuLink">
-
-                                    <NavLink className="dropdown-item" to='/formEstadio'>Estadio</NavLink>
-                                    <NavLink className="dropdown-item" to='/formPolivalente' >Polivalente</NavLink>
-
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                </div>
-
-
-            </div>
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">
                     <span className=' usuario nav-item nav-link btn'>

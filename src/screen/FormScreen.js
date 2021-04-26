@@ -1,19 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-
 import { useForm } from '../components/hooks/useForm'
-
 import '../../src/css.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-
 import Axios from 'axios'
-
 import Swal from 'sweetalert2'
-
-import { variables } from '../helpers/FormScreen/variables'
-
-
-
+import { variables } from '../helpers/variables'
 
 
 export const FormScreen = () => {
