@@ -25,9 +25,6 @@ export const LoginScreen = ({ history }) => {
 
     const { dispatch } = useContext(AuthContext)
 
-
-
-
     const handleSubmit = (e) => {
         e.preventDefault()
         // obtener usuario y password que acaba de entrar el usuario y 

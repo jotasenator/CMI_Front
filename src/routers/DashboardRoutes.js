@@ -10,6 +10,7 @@ import { FormScreen } from '../screen/FormScreen'
 
 
 //estadio  13 departamentos
+import { AltoRendimiento } from '../screen/departamentos/Estadio/AltoRendimiento'
 import { Aseguramiento } from '../screen/departamentos/Estadio/Aseguramiento'
 import { CabinaBaseball } from '../screen/departamentos/Estadio/CabinaBaseball'
 import { CulturaFisica } from '../screen/departamentos/Estadio/CulturaFisica'
@@ -54,6 +55,7 @@ export const DashboardRoutes = () => {
 
                     {/* Estadio */}
                     <Route exact path='/actividadDeportiva' component={ActividadDeportiva} />
+                    <Route exact path='/altoRendimiento' component={AltoRendimiento} />
                     <Route exact path='/aseguramiento' component={Aseguramiento} />
                     <Route exact path='/cabinaBaseball' component={CabinaBaseball} />
                     <Route exact path='/culturaFisica' component={CulturaFisica} />

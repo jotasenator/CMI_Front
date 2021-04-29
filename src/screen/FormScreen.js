@@ -6,7 +6,7 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
 import { variables } from '../helpers/variables'
-import { addBackToTop } from 'vanilla-back-to-top'
+
 
 export const FormScreen = () => {
 
@@ -227,6 +227,7 @@ export const FormScreen = () => {
                             {/* estadio */}
                             <optgroup label="Estadio">
                                 <option value="Actividad Deportiva">Actividad Deportiva</option>
+                                <option value="Alto Rendimiento">Alto Rendimiento</option>
                                 <option value="Aseguramiento">Aseguramiento</option>
                                 <option value="Cabina de Baseball">Cabina de Baseball</option>
                                 <option value="Cultura Fisica">Cultura Fisica</option>
@@ -326,7 +327,7 @@ export const FormScreen = () => {
                 </form>
             </div>
 
-            {addBackToTop()}
+
 
 
 

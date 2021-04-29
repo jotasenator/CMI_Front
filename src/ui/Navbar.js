@@ -120,6 +120,7 @@ export const Navbar = () => {
                                     <h5 className="dropdown-header"><i>Estadio</i></h5>
 
                                     <NavLink className="dropdown-item" to='/actividadDeportiva'>Actividad Deportiva</NavLink>
+                                    <NavLink className="dropdown-item" to='/altoRendimiento'>Alto Rendimiento</NavLink>
                                     <NavLink className="dropdown-item" to='/aseguramiento' >Aseguramiento</NavLink>
                                     <NavLink className="dropdown-item" to='/cabinaBaseball'>Cabina de Baseball</NavLink>
                                     <NavLink className="dropdown-item" to='/culturaFisica'>Cultura Fisica</NavLink>
