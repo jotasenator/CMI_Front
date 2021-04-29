@@ -80,18 +80,13 @@ export const Navbar = () => {
 
                                 </div>
                             </li>
-
                         </ul>
                     </div>
-
                 </div>
-
-
             </div>
 
             <div className="navbar-collapse" >
                 <div className="navbar-nav" >
-
                     <button className="navbar-toggler"
                         type="button"
                         data-toggle="collapse"
@@ -143,15 +138,10 @@ export const Navbar = () => {
                                     <NavLink className="dropdown-item" to='/organizacion'>Organización</NavLink>
                                     <NavLink className="dropdown-item" to='/subdireccionDocencia'>Subdirección Docencia</NavLink>
                                     <NavLink className="dropdown-item" to='/subdireccionPolivalente'>Subdirección Polivalente</NavLink>
-
-
                                 </div>
                             </li>
-
                         </ul>
                     </div>
-
-
                 </div>
             </div>
 
@@ -174,8 +164,6 @@ export const Navbar = () => {
                     </button>
                 </ul>
             </div>
-
-
         </nav >
     )
 }

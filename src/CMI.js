@@ -11,9 +11,8 @@ const init = () => {
 }
 
 const initID = () => {
-    return (
-        { id: '' }
-    )
+    return JSON.parse(localStorage.getItem('id')) || { id: '' }
+
 }
 
 export const CMI = () => {
@@ -27,6 +26,11 @@ export const CMI = () => {
         localStorage.setItem('user', JSON.stringify(user))
 
     }, [user])
+
+    useEffect(() => {
+        localStorage.setItem('id', JSON.stringify(id))
+
+    }, [id])
 
     return (
         <div>
