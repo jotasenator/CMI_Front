@@ -175,7 +175,8 @@ export const EditButton = ({
     return (
         <div>
             <button
-                className='btn btn-outline-primary mr-1'
+
+                className='btn btn-outline-primary mr-1 '
                 type='submit'
                 onClick={handleEdit}
 

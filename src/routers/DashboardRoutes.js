@@ -5,6 +5,7 @@ import { Navbar } from '../ui/Navbar'
 
 import { FormScreenEstadio } from '../screen/FormScreenEstadio'
 import { FormScreenPolivalente } from '../screen/FormScreenPolivalente'
+import { FormScreen } from '../screen/FormScreen'
 
 
 
@@ -32,6 +33,12 @@ import { Organizacion } from '../screen/departamentos/Polivalente/Organizacion'
 import { SubdireccionDocencia } from '../screen/departamentos/Polivalente/SubdireccionDocencia'
 import { SubdireccionPolivalente } from '../screen/departamentos/Polivalente/SubdireccionPolivalente'
 
+// Administracion
+import { AdminScreen } from '../screen/AdminScreen'
+// imprimir
+import { PrintScreen } from '../screen/PrintScreen'
+
+
 
 
 
@@ -41,8 +48,7 @@ export const DashboardRoutes = () => {
             <Navbar />
             <div>
                 <Switch>
-                    <Route exact path='/formEstadio' component={FormScreenEstadio} />
-
+                    <Route exact path='/form' component={FormScreen} />
                     <Route exact path='/formEstadio' component={FormScreenEstadio} />
                     <Route exact path='/formPolivalente' component={FormScreenPolivalente} />
 
@@ -70,9 +76,15 @@ export const DashboardRoutes = () => {
                     <Route exact path='/subdireccionDocencia' component={SubdireccionDocencia} />
                     <Route exact path='/subdireccionPolivalente' component={SubdireccionPolivalente} />
 
+                    {/* Administración */}
+                    <Route exact path='/administracion' component={AdminScreen} />
+
+                    {/* Print Screen */}
+                    <Route exact path='/imprimir' component={PrintScreen} />
 
 
-                    <Redirect to='/formEstadio' />
+
+                    <Redirect to='/form' />
                 </Switch>
             </div>
 

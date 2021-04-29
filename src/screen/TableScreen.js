@@ -3,32 +3,42 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Axios from 'axios'
 import { EditButton } from '../components/TableButtons/EditButton'
 import { DeleteButton } from '../components/TableButtons/DeleteButton'
+import { PrintButton } from '../components/TableButtons/PrintButton'
+
 
 export const TableScreen = ({ departamento }) => {
 
-    const [c1, setC1] = useState(''); const [c2, setC2] = useState(''); const [c3, setC3] = useState('')
-    const [c4, setC4] = useState(''); const [c5, setC5] = useState(''); const [c6, setC6] = useState('')
-    const [c7, setC7] = useState(''); const [c8, setC8] = useState(''); const [c9, setC9] = useState('')
-    const [c10, setC10] = useState(''); const [c11, setC11] = useState(''); const [c12, setC12] = useState('')
-    const [c13, setC13] = useState(''); const [c14, setC14] = useState(''); const [c15, setC15] = useState('')
-    const [c16, setC16] = useState(''); const [c17, setC17] = useState(''); const [c18, setC18] = useState('')
-    const [c19, setC19] = useState(''); const [c20, setC20] = useState(''); const [c21, setC21] = useState('')
-    const [c22, setC22] = useState(''); const [c23, setC23] = useState(''); const [c24, setC24] = useState('')
-    const [c25, setC25] = useState(''); const [c26, setC26] = useState(''); const [c27, setC27] = useState('')
-    const [c28, setC28] = useState(''); const [c29, setC29] = useState(''); const [c30, setC30] = useState('')
-    const [c31, setC31] = useState(''); const [c32, setC32] = useState(''); const [c33, setC33] = useState('')
-    const [c34, setC34] = useState(''); const [c35, setC35] = useState(''); const [c36, setC36] = useState('')
-    const [c37, setC37] = useState(''); const [c38, setC38] = useState(''); const [c39, setC39] = useState('')
-    const [c40, setC40] = useState(''); const [c41, setC41] = useState(''); const [c42, setC42] = useState('')
-    const [c43, setC43] = useState(''); const [c44, setC44] = useState(''); const [c45, setC45] = useState('')
-    const [c46, setC46] = useState(''); const [c47, setC47] = useState(''); const [c48, setC48] = useState('')
-    const [c49, setC49] = useState(''); const [c50, setC50] = useState(''); const [c51, setC51] = useState('')
-    const [c52, setC52] = useState(''); const [c53, setC53] = useState(''); const [c54, setC54] = useState('')
-    const [c55, setC55] = useState(''); const [c56, setC56] = useState(''); const [c57, setC57] = useState('')
-    const [c58, setC58] = useState();
+    const [c1, setC1] = useState(''); const [c2, setC2] = useState('')
+    const [c3, setC3] = useState(''); const [c4, setC4] = useState('')
+    const [c5, setC5] = useState(''); const [c6, setC6] = useState('')
+    const [c7, setC7] = useState(''); const [c8, setC8] = useState('')
+    const [c9, setC9] = useState(''); const [c10, setC10] = useState('')
+    const [c11, setC11] = useState(''); const [c12, setC12] = useState('')
+    const [c13, setC13] = useState(''); const [c14, setC14] = useState('')
+    const [c15, setC15] = useState(''); const [c16, setC16] = useState('')
+    const [c17, setC17] = useState(''); const [c18, setC18] = useState('')
+    const [c19, setC19] = useState(''); const [c20, setC20] = useState('')
+    const [c21, setC21] = useState(''); const [c22, setC22] = useState('')
+    const [c23, setC23] = useState(''); const [c24, setC24] = useState('')
+    const [c25, setC25] = useState(''); const [c26, setC26] = useState('')
+    const [c27, setC27] = useState(''); const [c28, setC28] = useState('')
+    const [c29, setC29] = useState(''); const [c30, setC30] = useState('')
+    const [c31, setC31] = useState(''); const [c32, setC32] = useState('')
+    const [c33, setC33] = useState(''); const [c34, setC34] = useState('')
+    const [c35, setC35] = useState(''); const [c36, setC36] = useState('')
+    const [c37, setC37] = useState(''); const [c38, setC38] = useState('')
+    const [c39, setC39] = useState(''); const [c40, setC40] = useState('')
+    const [c41, setC41] = useState(''); const [c42, setC42] = useState('')
+    const [c43, setC43] = useState(''); const [c44, setC44] = useState('')
+    const [c45, setC45] = useState(''); const [c46, setC46] = useState('')
+    const [c47, setC47] = useState(''); const [c48, setC48] = useState('')
+    const [c49, setC49] = useState(''); const [c50, setC50] = useState('')
+    const [c51, setC51] = useState(''); const [c52, setC52] = useState('')
+    const [c53, setC53] = useState(''); const [c54, setC54] = useState('')
+    const [c55, setC55] = useState(''); const [c56, setC56] = useState('')
+    const [c57, setC57] = useState(''); const [c58, setC58] = useState('')
 
-
-    const [dataState, setDataState] = useState({})
+    const [dataState, setDataState] = useState('')
 
     useEffect(() => {
 
@@ -43,10 +53,17 @@ export const TableScreen = ({ departamento }) => {
                     setDataState(dataFiltrada)
                 }
             })
-            .catch((e) => {
+            .catch((err) => {
+                console.log(err)
             })
-        return () => mounted = false
-    }, [dataState, departamento])
+
+        return () => {
+            mounted = false
+        }
+
+    }, [departamento])
+
+
 
     return (
         <>
@@ -124,6 +141,7 @@ export const TableScreen = ({ departamento }) => {
                             <th scope="col">UpsNS</th>
                             <th scope="col">UpsObservaciones</th>
                             <th scope="col">UpsNI</th>
+                            <th scope="col">No</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -192,11 +210,14 @@ export const TableScreen = ({ departamento }) => {
                                     <td onInput={(e) => setC56(e.target.textContent)} contentEditable={true} suppressContentEditableWarning={true}>{informacion.upsNS}</td>
                                     <td onInput={(e) => setC57(e.target.textContent)} contentEditable={true} suppressContentEditableWarning={true}>{informacion.upsObservaciones}</td>
                                     <td onInput={(e) => setC58(e.target.textContent)} contentEditable={true} suppressContentEditableWarning={true}>{informacion.upsNI}</td>
-                                    <td className='butonEditDelete'>
+                                    <th >{index + 1}</th>
+                                    <td className='buttonPrintEditDelete'>
+                                        <PrintButton
+                                            id={informacion.id} />
                                         <EditButton
                                             id={informacion.id}
                                             responsable={c1 === '' ? informacion.responsable : c1}
-                                            noSello={c2 === '' ? informacion.noSelloc2 : c2}
+                                            noSello={c2 === '' ? informacion.noSello : c2}
                                             identificadorEquipo={c3 === '' ? informacion.identificadorEquipo : c3}
                                             placaMadreMarca={c4 === '' ? informacion.placaMadreMarca : c4}
                                             placaMadreModelo={c5 === '' ? informacion.placaMadreModelo : c5}
@@ -256,6 +277,7 @@ export const TableScreen = ({ departamento }) => {
                                         />
                                         <DeleteButton
                                             id={informacion.id}
+                                        /*departamento={departamento}*/
                                         />
                                     </td>
                                 </tr>

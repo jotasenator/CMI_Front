@@ -8,6 +8,11 @@ body {
   padding-right: 0 !important;
 }
 
+.administracion {
+  background-color: #2b8169;
+  border: none;
+}
+
 .login-container {
   margin-top: 10vh;
 }
@@ -106,17 +111,24 @@ span {
   color: white !important;
 }
 
-.loginBox {
+.loginBox,
+.loginBoxAdmin {
   box-shadow: 0px 0px 5px 0px #0062cc;
   border-radius: 10px;
-  margin-top: 20vh;
-  background-color: #2da78e85;
   min-width: 400px;
+}
+.loginBox {
+  background-color: #2da78e85;
+  margin-top: 20vh;
+}
+.loginBoxAdmin {
+  margin-top: 15vh;
+  background-color: #2b8169;
 }
 
 .imageLogin {
-  background: url(./images/imagesLoginScreen/estadio_polivalente4.png) no-repeat
-    center center fixed;
+  background: url(./images/estadio_polivalente4.png) no-repeat center center
+    fixed;
   background-size: cover;
   height: 100vh;
   overflow: hidden;
@@ -138,7 +150,7 @@ label {
   text-align: end;
 }
 
-.butonEditDelete {
+.buttonPrintEditDelete {
   display: flex !important;
   flex-direction: row !important;
 }
@@ -162,4 +174,19 @@ td > div {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+.table > tbody > tr > td > div > button {
+  margin-left: 5px;
+}
+#back-to-top {
+  background-color: #2b8169;
+  transition: ease 0.5s;
+}
+.no-print-but-print {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .navLogo {
+    display: none !important;
+  }
 }

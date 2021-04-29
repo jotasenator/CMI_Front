@@ -6,7 +6,7 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
 import { variables } from '../helpers/variables'
-
+import { addBackToTop } from 'vanilla-back-to-top'
 
 export const FormScreen = () => {
 
@@ -187,7 +187,7 @@ export const FormScreen = () => {
                             setTimeout(() => {
                                 window.location.replace('')
 
-                            }, 1000);
+                            }, 1000)
 
 
 
@@ -325,6 +325,8 @@ export const FormScreen = () => {
 
                 </form>
             </div>
+
+            {addBackToTop()}
 
 
 

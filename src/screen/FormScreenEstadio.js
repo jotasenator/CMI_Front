@@ -4,6 +4,7 @@ import { useForm } from '../components/hooks/useForm'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
 import { variables } from '../helpers/variables'
+import { addBackToTop } from 'vanilla-back-to-top'
 
 import '../../src/css.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -316,6 +317,7 @@ export const FormScreenEstadio = () => {
 
                 </form>
             </div>
+            {addBackToTop()}
 
 
 

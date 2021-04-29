@@ -24,11 +24,8 @@ export const Navbar = () => {
 
     }
 
-
-
-
     return (
-        <nav className=" nav1 navbar navbar-expand-sm navbar-dark ">
+        <nav className="   nav1 navbar navbar-expand-sm navbar-dark ">
 
             <Link
                 className=" navLogo navbar-brand"
@@ -160,9 +157,12 @@ export const Navbar = () => {
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">
-                    <span className=' usuario nav-item nav-link btn'>
-                        {user.name}
+                    <span style={{ color: 'yellow' }} className=' usuario nav-item nav-link btn'>
+                        <strong>{user.name}</strong>
                     </span>
+                    <NavLink to='/administracion' className="administracion nav-item nav-link btn ">
+                        Administración
+                    </NavLink>
                     <button
 
                         className="nav-item nav-link btn"

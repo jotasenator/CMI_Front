@@ -5,9 +5,9 @@ import { AuthContext } from '../auth/AuthContext'
 import { types } from '../types/types'
 import bcrypt from 'bcryptjs'
 import Swal from 'sweetalert2'
-import '../css.css'
 import { IconoInicio } from '../components/loginScreen/IconoInicio'
 
+import '../css.css'
 
 
 
@@ -39,8 +39,6 @@ export const LoginScreen = ({ history }) => {
 
                     const cuentasBD = res.data.admin
 
-
-
                     const verificar = cuentasBD.find(
                         elemento => elemento.usuario === usuarioAdmin
                             &&
@@ -51,12 +49,7 @@ export const LoginScreen = ({ history }) => {
 
                     if (verificar !== undefined) {
 
-                        // Swal.fire(
-                        //     'Correcto   ',
-                        //     'Usuario verificado con éxito',
-                        //     'success',
 
-                        // )
                         Swal.fire({
 
                             position: 'center',
@@ -127,10 +120,6 @@ export const LoginScreen = ({ history }) => {
 
                                 <IconoInicio />
                             </div>
-
-
-
-
                         </div>
 
                         <h3>

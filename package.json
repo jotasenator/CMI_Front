@@ -26,6 +26,7 @@
     "react-scripts": "4.0.1",
     "react-select-country-list": "^2.2.3",
     "sweetalert2": "^10.15.7",
+    "vanilla-back-to-top": "^7.2.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
