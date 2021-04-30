@@ -211,7 +211,7 @@ export const FormScreenEstadio = () => {
 
     return (
         <>
-            <div className=" form col-5 mt-5  login-form">
+            <div className=" form col-5 mt-5 mb-5 login-form">
                 <h3 className='pb-3' >Datos de interés</h3>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
@@ -220,8 +220,6 @@ export const FormScreenEstadio = () => {
                             className="form-control "
                             name='departamento'
                             onChange={handleInputchange}
-
-
 
                         >
                             <option defaultValue hidden >Elija el área de trabajo</option>
@@ -285,20 +283,10 @@ export const FormScreenEstadio = () => {
                                             // eslint-disable-next-line no-eval
                                             value={eval(variable)}
                                             title={variable}
-
                                         />
-
-
-
                                     )
-
                             }
-
                         </div>
-
-
-
-
                     )}
 
 
@@ -313,15 +301,8 @@ export const FormScreenEstadio = () => {
                             className=" btnSubmit1 p-3 btn btn-primary "
                             value="Guardar " />
                     </div>
-
-
-
                 </form>
             </div>
-
-
-
-
         </>
     )
 }

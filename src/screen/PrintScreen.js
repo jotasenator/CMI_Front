@@ -25,11 +25,11 @@ export const PrintScreen = () => {
 
 
     return (
-        <div className='print-table container'>
+        <div className='print-table container mt-5 mb-5'>
             <div className='encabezado1'>
 
                 <p>Dirección Provincial de Deportes</p>
-                <p>Calle Gerardo Medina s/n Rpto Capitán San Luis, Pinar del Río</p>
+                <p>Calle Gerardo Medina s/n Rpto Capitán San Luis, Pinar del Río, Pinar del Río</p>
                 <p>Teléfono (+53)48727282</p>
             </div>
             <hr />
@@ -134,19 +134,27 @@ export const PrintScreen = () => {
                             <td>{data.impresoraModelo}</td>
                             <td>{data.impresoraNS}</td>
                         </tr>
+                        <tr>
+                            <td>{data.upsNI}</td>
+                            <td>Fuente</td>
+                            <td>-</td>
+                            <td>{data.upsMarca}</td>
+                            <td>{data.upsModelo}</td>
+                            <td>{data.upsNS}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <p><span>No. Sello:</span> {data.noSello}</p>
 
-            <div className='mt-5'>
-                <p><span>CONTROL DE ENTRADAS, SALIDAS Y MOVIMIENTO DE  LAS TECNOLOGÍAS INFORMÁTICAS (Medios de Cómputo)</span></p>
+            <div className='mt-5 '>
+                <p><span>CONTROL DE ENTRADAS, SALIDAS Y MOVIMIENTO DE  LAS TECNOLOGÍAS INFORMÁTICAS</span></p>
 
                 <div>
                     <table className="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">Medio</th>
+                                <th scope="col">Medio de cómputo</th>
                                 <th scope="col">Fecha de entrada</th>
                                 <th scope="col">Fecha de salida</th>
                                 <th scope="col">Motivo del movimiento</th>
@@ -239,7 +247,6 @@ export const PrintScreen = () => {
                     </table>
                 </div>
             </div>
-
         </div >
     )
 }

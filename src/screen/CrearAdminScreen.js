@@ -9,7 +9,7 @@ import '../css.css'
 
 
 
-export const AdminScreen = () => {
+export const CrearAdminScreen = () => {
 
     const [loginValues, handleInputchange, reset] = useForm({
         usuarioAdmin: '',
@@ -52,6 +52,16 @@ export const AdminScreen = () => {
 
                                 })
                         }
+                        if (password1 !== password2) {
+                            Swal.fire(
+                                'Las contraseñas no coinciden',
+                                'Verifique las contraseñas',
+                                'warning'
+                            )
+
+
+                        }
+
                     }
                     if (!(verificarUsuario === undefined)) {
                         Swal.fire(

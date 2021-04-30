@@ -5,8 +5,6 @@ import Axios from 'axios'
 import Swal from 'sweetalert2'
 import { variables } from '../helpers/variables'
 
-// import { addBackToTop } from 'vanilla-back-to-top'
-
 import '../../src/css.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
@@ -205,10 +203,8 @@ export const FormScreenPolivalente = () => {
     return (
         <>
 
-            <div className=" form col-5 mt-5  login-form">
+            <div className=" form col-5 mt-5 mb-5 login-form">
                 <h3 className='pb-3' >Datos de interés </h3>
-
-
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
 
@@ -231,11 +227,9 @@ export const FormScreenPolivalente = () => {
                                 <option value="Subdirección Polivalente">Subdirección Polivalente</option>
                             </optgroup>
                         </select>
-
                     </div>
                     {/*renderizado opcional para tener un cambio de color en los inputs */}
                     {variables.map((variable, index) =>
-
                         <div key={index} className="form-group">
 
                             {
@@ -272,27 +266,14 @@ export const FormScreenPolivalente = () => {
                                             // eslint-disable-next-line no-eval
                                             value={eval(variable)}
                                             title={variable}
-
                                         />
-
-
-
                                     )
-
                             }
-
                         </div>
-
-
-
-
                     )}
-
-
                     {/* Bton de guardar la informacion en la base de datos */}
                     <div
                         className="form-group"
-
                     >
                         <input
 
@@ -300,14 +281,8 @@ export const FormScreenPolivalente = () => {
                             className="btnSubmit1 p-3 btn btn-primary "
                             value="Guardar " />
                     </div>
-
-
-
                 </form>
             </div>
-            {/* {addBackToTop()} */}
-
-
 
         </>
     )

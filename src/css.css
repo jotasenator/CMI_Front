@@ -139,11 +139,23 @@ label {
   color: whitesmoke;
 }
 
+/* administrar usuario eliminar */
+.eliminar-tabla {
+  margin-top: 100px;
+  width: 500px !important;
+}
+.table > tbody > tr > td > div {
+  display: flex;
+  justify-content: center;
+}
+.td-eliminar {
+  width: 100px;
+}
 /* tabla */
 
 .tabla-general {
   max-height: 70vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .registro {
@@ -178,10 +190,7 @@ td > div {
 .table > tbody > tr > td > div > button {
   margin-left: 5px;
 }
-#back-to-top {
-  background-color: #2b8169;
-  transition: ease 0.5s;
-}
+
 .print-table {
   font-size: small;
 }
@@ -206,6 +215,7 @@ p > span {
 .nombre-dominio > p:nth-child(2) {
   margin-left: 20px;
 }
+
 @media screen and (max-width: 900px) {
   .navLogo {
     display: none !important;

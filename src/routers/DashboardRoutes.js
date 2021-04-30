@@ -35,7 +35,10 @@ import { SubdireccionDocencia } from '../screen/departamentos/Polivalente/Subdir
 import { SubdireccionPolivalente } from '../screen/departamentos/Polivalente/SubdireccionPolivalente'
 
 // Administracion
-import { AdminScreen } from '../screen/AdminScreen'
+import { CrearAdminScreen } from '../screen/CrearAdminScreen'
+import { EliminarAdminScreen } from '../screen/EliminarAdminScreen'
+
+
 // imprimir
 import { PrintScreen } from '../screen/PrintScreen'
 
@@ -79,7 +82,8 @@ export const DashboardRoutes = () => {
                     <Route exact path='/subdireccionPolivalente' component={SubdireccionPolivalente} />
 
                     {/* Administración */}
-                    <Route exact path='/administracion' component={AdminScreen} />
+                    <Route exact path='/crearUsuario' component={CrearAdminScreen} />
+                    <Route exact path='/eliminarUsuario' component={EliminarAdminScreen} />
 
                     {/* Print Screen */}
                     <Route exact path='/imprimir' component={PrintScreen} />

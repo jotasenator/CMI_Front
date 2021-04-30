@@ -1,16 +1,15 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from '../components/hooks/useForm'
 import '../../src/css.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
 import { variables } from '../helpers/variables'
-
+import { ButtonTop } from '../components/formScreen/ButtonTop'
 
 export const FormScreen = () => {
-
-    const [formValues, handleInputchange, reset] = useForm({
+    const [formValues, handleInputchange] = useForm({
         departamento: '',
         responsable: '',
         noSello: '',
@@ -139,8 +138,6 @@ export const FormScreen = () => {
     } = formValues
 
 
-
-
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -208,7 +205,7 @@ export const FormScreen = () => {
     return (
         <>
 
-            <div className=" form col-5 mt-5  login-form">
+            <div className=" form col-5 mt-5 mb-5 login-form">
                 <h3 className='pb-3' >Datos de interés </h3>
 
 
@@ -326,10 +323,7 @@ export const FormScreen = () => {
 
                 </form>
             </div>
-
-
-
-
+            <ButtonTop />
 
         </>
     )

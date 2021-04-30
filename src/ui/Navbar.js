@@ -17,6 +17,8 @@ export const Navbar = () => {
 
     const handleLogout = () => {
         history.replace('/login')
+        localStorage.removeItem('id')
+
 
         dispatch({
             type: types.logout
@@ -151,9 +153,44 @@ export const Navbar = () => {
                     <span style={{ color: 'yellow' }} className=' usuario nav-item nav-link btn'>
                         <strong>{user.name}</strong>
                     </span>
-                    <NavLink to='/administracion' className="administracion nav-item nav-link btn ">
-                        Administración
-                    </NavLink>
+
+                    <div className="navbar-collapse" >
+                        <div className="navbar-nav" >
+                            <button className="navbar-toggler"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="1navbarNavDropdown"
+                                aria-controls="navbarNavDropdown"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon" ></span>
+                            </button>
+                            <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul className="navbar-nav">
+
+                                    <li className="nav-item dropdown  ">
+                                        <button
+                                            className=" button1 nav-link dropdown-toggle   "
+                                            style={{ padding: '0' }}
+                                            data-toggle="dropdown"
+                                        >
+                                            Administración
+                                </button>
+
+                                        <div className="dropdown-menu"
+                                            aria-labelledby="navbarDropdownMenuLink">
+                                            <NavLink
+                                                className="dropdown-item" to='/crearUsuario'>Crear usuario</NavLink>
+                                            <NavLink className="dropdown-item"
+                                                to='/eliminarUsuario' >Eliminar usuario</NavLink>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                     <button
 
                         className="nav-item nav-link btn"
