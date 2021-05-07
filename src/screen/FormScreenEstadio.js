@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from '../components/hooks/useForm'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
@@ -8,13 +8,43 @@ import { variables } from '../helpers/variables'
 
 import '../../src/css.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { ButtonLoadFoto } from '../components/formScreen/ButtonLoadFoto'
+import { AuthContext } from '../auth/AuthContext'
 
 
 
 
 export const FormScreenEstadio = () => {
+    const { user } = useContext(AuthContext)
+
+    const Day = () => {
+        const fecha = new Date()
+        switch (fecha.getDay()) {
+            case 1:
+                return 'Lunes'
+
+            case 2:
+                return 'Martes'
+
+            case 3:
+                return 'Miércoles'
+
+            case 4:
+                return 'Jueves'
+
+            case 5:
+                return 'Viernes'
+
+            case 6:
+                return 'Sábado'
+
+            default:
+                return 'Domingo'
+        }
+    }
 
     const [formValues, handleInputchange, reset] = useForm({
+        instalacion: 'Estadio',
         departamento: '',
         responsable: '',
         noSello: '',
@@ -74,6 +104,9 @@ export const FormScreenEstadio = () => {
         upsNS: '',
         upsObservaciones: '',
         upsNI: '',
+        creadoPor: user.name,
+        fecha: new Intl.DateTimeFormat('es-ES').format(new Date()) + Day()
+
 
 
 
@@ -244,6 +277,7 @@ export const FormScreenEstadio = () => {
                         </select>
 
                     </div>
+                    <ButtonLoadFoto />
                     {/*renderizado opcional para tener un cambio de color en los inputs */}
                     {variables.map((variable, index) =>
 

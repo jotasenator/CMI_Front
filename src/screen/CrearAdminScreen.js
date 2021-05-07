@@ -4,10 +4,7 @@ import Axios from 'axios'
 import Swal from 'sweetalert2'
 import { IconoAdmin } from '../components/adminScreen/IconoAdmin'
 
-
 import '../css.css'
-
-
 
 export const CrearAdminScreen = () => {
 
@@ -79,7 +76,7 @@ export const CrearAdminScreen = () => {
                 'Entrada de datos incorrecta',
                 'error'
             )
-            reset()
+
         }
     }
 

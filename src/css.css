@@ -190,7 +190,42 @@ td > div {
 .table > tbody > tr > td > div > button {
   margin-left: 5px;
 }
+/* .organismo-foto-usuario {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+.foto-usuario {
+  border: 1px solid black;
+  border-radius: 50%;
+  float: right;
+  height: 200px;
+  width: 200px;
+}
+.imagen-usuario {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
 
+.load-input {
+  display: flex;
+  justify-content: center;
+}
+.load-input > button,
+.load-input > img {
+  background-color: #f8d7da;
+  border-radius: 50%;
+  color: #6c757d;
+  cursor: pointer;
+  height: 150px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  width: 150px;
+}
+.load-input > img {
+  object-fit: cover;
+}
 .print-table {
   font-size: small;
 }
@@ -214,6 +249,11 @@ p > span {
 }
 .nombre-dominio > p:nth-child(2) {
   margin-left: 20px;
+}
+
+/* tabla estadisitica */
+.tabla-estadistica-encabezado {
+  text-align: center;
 }
 
 @media screen and (max-width: 900px) {

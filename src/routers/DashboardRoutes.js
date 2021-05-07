@@ -5,7 +5,7 @@ import { Navbar } from '../ui/Navbar'
 
 import { FormScreenEstadio } from '../screen/FormScreenEstadio'
 import { FormScreenPolivalente } from '../screen/FormScreenPolivalente'
-import { FormScreen } from '../screen/FormScreen'
+import { Estadistica } from '../screen/Estadistica'
 
 
 
@@ -46,13 +46,14 @@ import { PrintScreen } from '../screen/PrintScreen'
 
 
 
+
 export const DashboardRoutes = () => {
     return (
         <>
             <Navbar />
             <div>
                 <Switch>
-                    <Route exact path='/form' component={FormScreen} />
+                    <Route exact path='/estadistica' component={Estadistica} />
                     <Route exact path='/formEstadio' component={FormScreenEstadio} />
                     <Route exact path='/formPolivalente' component={FormScreenPolivalente} />
 
@@ -90,7 +91,7 @@ export const DashboardRoutes = () => {
 
 
 
-                    <Redirect to='/form' />
+                    <Redirect to='/estadistica' />
                 </Switch>
             </div>
 

@@ -17,9 +17,8 @@ export const Navbar = () => {
 
     const handleLogout = () => {
         history.replace('/login')
-        localStorage.removeItem('id')
 
-
+        localStorage.clear()
         dispatch({
             type: types.logout
         })
@@ -36,6 +35,17 @@ export const Navbar = () => {
             >
                 CMI Estadio Capitán San Luis
             </Link>
+            <div className="navbar-nav">
+
+                <NavLink
+                    activeClassName="active"
+                    className="nav-item nav-link"
+                    exact
+                    to="/estadistica"
+                >
+                    Estadísticas
+                    </NavLink>
+            </div>
             <div className="navbar-collapse" >
                 <div className="navbar-nav" >
                     <button className="navbar-toggler"
@@ -149,6 +159,7 @@ export const Navbar = () => {
 
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+
                 <ul className="navbar-nav ml-auto">
                     <span style={{ color: 'yellow' }} className=' usuario nav-item nav-link btn'>
                         <strong>{user.name}</strong>

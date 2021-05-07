@@ -36,7 +36,10 @@ export const PrintScreen = () => {
             <div className='encabezado2'>
                 <p>MODELO FICHA TÉCNICA DEL EQUIPAMIENTO INFORMÁTICO </p>
             </div>
-            <p><span>Organismo:</span> INDER</p>
+            <div className='organismo-foto-usuario'>
+                <p><span>Organismo:</span> INDER</p>
+                <div className='foto-usuario'></div>
+            </div>
             <p><span>Entidad:</span> Dirección Provincial de Deportes Pinar del Río</p>
             <p><span>Área o Dirección de Trabajo:</span> {data.departamento}</p>
             <p><span>Responsable:</span> {data.responsable}</p>

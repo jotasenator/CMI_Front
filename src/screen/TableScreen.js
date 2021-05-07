@@ -6,6 +6,9 @@ import { DeleteButton } from '../components/TableButtons/DeleteButton'
 import { PrintButton } from '../components/TableButtons/PrintButton'
 
 
+
+
+
 export const TableScreen = ({ departamento }) => {
 
     const [c1, setC1] = useState(''); const [c2, setC2] = useState('')
@@ -141,6 +144,8 @@ export const TableScreen = ({ departamento }) => {
                             <th scope="col">UpsNS</th>
                             <th scope="col">UpsObservaciones</th>
                             <th scope="col">UpsNI</th>
+                            <th scope="col">Creado por</th>
+                            <th scope="col">Fecha</th>
                             <th scope="col">No</th>
                         </tr>
                     </thead>
@@ -210,6 +215,9 @@ export const TableScreen = ({ departamento }) => {
                                     <td onInput={(e) => setC56(e.target.textContent)} contentEditable={true} suppressContentEditableWarning={true}>{informacion.upsNS}</td>
                                     <td onInput={(e) => setC57(e.target.textContent)} contentEditable={true} suppressContentEditableWarning={true}>{informacion.upsObservaciones}</td>
                                     <td onInput={(e) => setC58(e.target.textContent)} contentEditable={true} suppressContentEditableWarning={true}>{informacion.upsNI}</td>
+                                    <td>{informacion.creadoPor}</td>
+                                    <td>{informacion.fecha}</td>
+
                                     <th >{index + 1}</th>
                                     <td className='buttonPrintEditDelete'>
                                         <PrintButton
