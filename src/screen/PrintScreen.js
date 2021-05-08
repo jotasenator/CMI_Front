@@ -38,7 +38,7 @@ export const PrintScreen = () => {
             </div>
             <div className='organismo-foto-usuario'>
                 <p><span>Organismo:</span> INDER</p>
-                <div className='foto-usuario'></div>
+
             </div>
             <p><span>Entidad:</span> Dirección Provincial de Deportes Pinar del Río</p>
             <p><span>Área o Dirección de Trabajo:</span> {data.departamento}</p>

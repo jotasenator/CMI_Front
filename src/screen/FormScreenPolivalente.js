@@ -7,7 +7,7 @@ import { variables } from '../helpers/variables'
 
 import '../../src/css.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import { ButtonLoadFoto } from '../components/formScreen/ButtonLoadFoto'
+
 
 export const FormScreenPolivalente = () => {
 
@@ -230,7 +230,7 @@ export const FormScreenPolivalente = () => {
                             </optgroup>
                         </select>
                     </div>
-                    <ButtonLoadFoto />
+
                     {/*renderizado opcional para tener un cambio de color en los inputs */}
                     {variables.map((variable, index) =>
                         <div key={index} className="form-group">

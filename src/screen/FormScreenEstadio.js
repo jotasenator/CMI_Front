@@ -8,11 +8,8 @@ import { variables } from '../helpers/variables'
 
 import '../../src/css.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import { ButtonLoadFoto } from '../components/formScreen/ButtonLoadFoto'
+
 import { AuthContext } from '../auth/AuthContext'
-
-
-
 
 export const FormScreenEstadio = () => {
     const { user } = useContext(AuthContext)
@@ -44,6 +41,7 @@ export const FormScreenEstadio = () => {
     }
 
     const [formValues, handleInputchange, reset] = useForm({
+
         instalacion: 'Estadio',
         departamento: '',
         responsable: '',
@@ -106,9 +104,6 @@ export const FormScreenEstadio = () => {
         upsNI: '',
         creadoPor: user.name,
         fecha: new Intl.DateTimeFormat('es-ES').format(new Date()) + Day()
-
-
-
 
     })
 
@@ -174,8 +169,6 @@ export const FormScreenEstadio = () => {
         upsNI,
 
     } = formValues
-
-
 
 
     const handleSubmit = (e) => {
@@ -277,7 +270,7 @@ export const FormScreenEstadio = () => {
                         </select>
 
                     </div>
-                    <ButtonLoadFoto />
+
                     {/*renderizado opcional para tener un cambio de color en los inputs */}
                     {variables.map((variable, index) =>
 

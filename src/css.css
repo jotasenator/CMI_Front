@@ -190,18 +190,7 @@ td > div {
 .table > tbody > tr > td > div > button {
   margin-left: 5px;
 }
-/* .organismo-foto-usuario {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-} */
-.foto-usuario {
-  border: 1px solid black;
-  border-radius: 50%;
-  float: right;
-  height: 200px;
-  width: 200px;
-}
+
 .imagen-usuario {
   border-radius: 50%;
   height: 200px;
