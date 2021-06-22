@@ -26,7 +26,7 @@ export const DeleteButton = ({ id }) => {
 
                             position: 'center',
                             icon: 'success',
-                            title: 'Usuario verificado con éxito',
+                            title: 'Información eliminada con éxito',
                             showConfirmButton: false,
                             timer: 1500
                         })
